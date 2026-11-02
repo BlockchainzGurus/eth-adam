@@ -1,0 +1,34 @@
+\chapter{Implementazione}
+\label{cap:implementazione}
+
+\section{Ambiente e strumenti}
+\todo{Linguaggi, librerie, framework di sviluppo e test, rete di test.}
+
+\section{Smart contract}
+Il Listato~\ref{lst:registro} riporta un esempio minimale di registro di hash, da sostituire con il codice reale.
+
+\begin{lstlisting}[language=Solidity, caption={Esempio: registro di hash di certificati e \sbom.}, label={lst:registro}]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract RegistroCertificati {
+    mapping(bytes32 => address) public emittente;
+
+    event Registrato(bytes32 indexed hash, address indexed da);
+
+    function registra(bytes32 hash) public {
+        require(emittente[hash] == address(0), "gia' registrato");
+        emittente[hash] = msg.sender;
+        emit Registrato(hash, msg.sender);
+    }
+}
+\end{lstlisting}
+
+\section{Generazione della \sbom}
+\begin{lstlisting}[language=bash, caption={Esempio di comando per generare una SBOM.}, label={lst:cmd-sbom}]
+# esempio generico: sostituire con lo strumento realmente utilizzato
+cyclonedx-py environment -o sbom.json
+\end{lstlisting}
+
+\section{Emissione e verifica dei certificati}
+\todo{Descrivere i flussi implementati e le scelte crittografiche.}

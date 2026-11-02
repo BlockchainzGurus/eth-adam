@@ -1,0 +1,159 @@
+% ============================================================
+%  TEMPLATE PROGETTO - Software Security e Blockchain
+%  UNIVPM - Laurea Magistrale in Ing. Informatica e dell'Automazione
+%
+%  Compilazione consigliata:  latexmk -pdf main.tex
+%  (oppure carica la cartella su Overleaf: main.tex è il file principale)
+% ============================================================
+\documentclass[11pt,a4paper,oneside]{report}
+
+% ---------- Lingua e codifica ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Layout ----------
+\usepackage[a4paper, top=3cm, bottom=3cm, left=3cm, right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{parskip}
+\setlength{\parskip}{0.6em}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% ---------- Colori e grafica ----------
+\usepackage[dvipsnames,svgnames]{xcolor}
+\definecolor{navy}{HTML}{0B1F3A}
+\definecolor{teal}{HTML}{14A3A3}
+\definecolor{codebg}{HTML}{F4F7FA}
+\definecolor{codekw}{HTML}{0B5FA5}
+\definecolor{codecom}{HTML}{5A7D5A}
+\definecolor{codestr}{HTML}{B3541E}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, calc, fit, backgrounds}
+
+% ---------- Tabelle, figure, matematica ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath, amssymb}
+\captionsetup{font=small, labelfont={bf,color=navy}}
+
+% ---------- Codice (Solidity, JSON, Python, shell) ----------
+\usepackage{listings}
+\lstdefinelanguage{Solidity}{
+  keywords={pragma, solidity, contract, function, public, private, internal, external,
+            view, pure, returns, return, mapping, address, uint256, uint, bool, string,
+            bytes32, bytes, event, emit, modifier, require, msg, constructor, memory, storage,
+            struct, if, else, for, import, is, payable, override, virtual},
+  keywordstyle=\color{codekw}\bfseries,
+  comment=[l]{//}, morecomment=[s]{/*}{*/},
+  commentstyle=\color{codecom}\itshape,
+  stringstyle=\color{codestr},
+  morestring=[b]"
+}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single, rulecolor=\color{navy!20},
+  numbers=left, numberstyle=\tiny\color{gray},
+  breaklines=true, breakatwhitespace=false,
+  columns=fullflexible, keepspaces=true,
+  showstringspaces=false, tabsize=2,
+  captionpos=b, xleftmargin=1.5em, framexleftmargin=1.5em,
+  literate={à}{{\`a}}1 {è}{{\`e}}1 {é}{{\'e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+}
+\renewcommand{\lstlistingname}{Listato}
+\renewcommand{\lstlistlistingname}{Elenco dei listati}
+
+% ---------- Bibliografia ----------
+\usepackage[backend=bibtex, style=numeric, sorting=none]{biblatex}
+\addbibresource{bibliografia.bib}
+
+% ---------- Collegamenti e URL ----------
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Metadati ----------
+\input{metadati.tex}
+\hypersetup{
+  pdftitle={\titolobreve},
+  pdfauthor={\studenteA, \studenteB, \studenteC, \studenteD},
+  pdfsubject={\corso - \ateneo},
+  pdfkeywords={software security, blockchain, SBOM, certificati di sicurezza}
+}
+
+% ---------- Stile titoli ----------
+\titleformat{\chapter}[hang]{\sffamily\bfseries\Huge\color{navy}}{\thechapter}{0.6em}{}[{\color{teal}\titlerule[1.5pt]}]
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+\titleformat{\section}{\sffamily\bfseries\Large\color{navy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\sffamily\bfseries\large\color{navy!85}}{\thesubsection}{0.6em}{}
+
+% ---------- Intestazioni e piè di pagina ----------
+\setlength{\headheight}{16pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small\color{gray}\titolobreve}
+\fancyhead[R]{\sffamily\small\color{gray}\leftmark}
+\fancyfoot[C]{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{teal}\leaders\hrule height \headrulewidth\hfill}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\sffamily\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------- Comandi utili per il progetto ----------
+\newcommand{\sbom}{\textsc{sbom}}
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\codice}[1]{\texttt{#1}}
+\newenvironment{riquadro}[1]{%
+  \par\medskip\noindent\begin{tikzpicture}
+  \node[draw=teal, fill=teal!6, rounded corners=3pt, line width=0.8pt,
+        inner sep=8pt, text width=\dimexpr\linewidth-16pt-1.6pt\relax]\bgroup
+  \sffamily\bfseries\color{navy}#1\par\smallskip\rmfamily\normalfont\color{black}%
+}{\egroup;\end{tikzpicture}\par\medskip}
+
+% ============================================================
+\begin{document}
+
+\pagenumbering{gobble}
+\input{frontespizio.tex}
+
+\pagenumbering{roman}
+
+% ---------- Abstract ----------
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{capitoli/00_abstract.tex}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+% ---------- Corpo del documento ----------
+\clearpage
+\pagenumbering{arabic}
+
+\input{capitoli/01_introduzione.tex}
+\input{capitoli/02_stato_arte.tex}
+\input{capitoli/03_requisiti_threat_model.tex}
+\input{capitoli/04_progettazione.tex}
+\input{capitoli/05_implementazione.tex}
+\input{capitoli/06_valutazione.tex}
+\input{capitoli/07_conclusioni.tex}
+
+% ---------- Appendici ----------
+\appendix
+\input{capitoli/A_ripartizione_lavoro.tex}
+
+% ---------- Bibliografia ----------
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliografia}
+\printbibliography[heading=none]
+
+\end{document}

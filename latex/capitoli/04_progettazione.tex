@@ -1,0 +1,37 @@
+\chapter{Progettazione}
+\label{cap:progettazione}
+
+\section{Architettura generale}
+La Figura~\ref{fig:architettura} mostra uno schema d'esempio dell'architettura; va adattato al progetto.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      node distance=1.4cm and 1.6cm,
+      box/.style={draw=navy, fill=navy!6, rounded corners=3pt, minimum width=2.8cm,
+                  minimum height=1cm, align=center, font=\sffamily\small},
+      chain/.style={draw=teal, fill=teal!10, rounded corners=3pt, minimum width=2.8cm,
+                    minimum height=1cm, align=center, font=\sffamily\small},
+      arr/.style={-{Stealth[length=4pt]}, thick, color=navy}]
+    \node[box] (dev) {Sviluppatore};
+    \node[box, right=of dev] (sbom) {Generazione\\\sbom};
+    \node[box, right=of sbom] (cert) {Emissione\\certificato};
+    \node[chain, below=of cert] (bc) {Blockchain\\(smart contract)};
+    \node[box, below=of dev] (ver) {Verificatore};
+    \draw[arr] (dev) -- (sbom);
+    \draw[arr] (sbom) -- (cert);
+    \draw[arr] (cert) -- node[right, font=\scriptsize]{hash} (bc);
+    \draw[arr] (ver) -- node[above, font=\scriptsize]{verifica} (bc);
+  \end{tikzpicture}
+  \caption{Architettura di riferimento (esempio da adattare).}
+  \label{fig:architettura}
+\end{figure}
+
+\section{Struttura della \sbom}
+\todo{Campi, formato scelto e motivazioni.}
+
+\section{Certificati di sicurezza}
+\todo{Contenuto del certificato, catena di fiducia, ciclo di vita (emissione, revoca, scadenza).}
+
+\section{Ruolo della blockchain}
+\todo{Dati ancorati on-chain, scelta della rete, costi e compromessi.}

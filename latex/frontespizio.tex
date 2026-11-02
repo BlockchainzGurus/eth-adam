@@ -1,0 +1,126 @@
+% ============================================================
+%  FRONTESPIZIO
+%  Grafica: fascia navy con catena di blocchi (blockchain) e
+%  scudo con spunta (sicurezza / certificato), codice a
+%  barre di hash decorativo in fondo alla pagina.
+%  I dati arrivano da metadati.tex: non serve modificarlo.
+% ============================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\pagecolor{white}
+
+% ---------- Grafica di sfondo ----------
+\begin{tikzpicture}[remember picture, overlay]
+
+  % Fascia superiore
+  \fill[navy] (current page.north west) rectangle
+              ([yshift=-6.2cm]current page.north east);
+  \fill[teal] ([yshift=-6.2cm]current page.north west) rectangle
+              ([yshift=-6.35cm]current page.north east);
+
+  % Reticolo di punti (effetto "rete")
+  \begin{scope}
+    \clip (current page.north west) rectangle
+          ([yshift=-6.2cm]current page.north east);
+    \foreach \x in {0,0.8,...,21} {
+      \foreach \y in {0,0.8,...,6.2} {
+        \fill[white, opacity=0.06]
+          ([xshift=\x cm, yshift=-\y cm]current page.north west) circle (0.03);
+      }
+    }
+  \end{scope}
+
+  % Intestazione di ateneo (testo nella fascia)
+  \node[anchor=north west, text=white, align=left, inner sep=0pt]
+    at ([xshift=2.2cm, yshift=-1.3cm]current page.north west)
+    {\sffamily\bfseries\large \ateneo\\[2pt]
+     \sffamily\small\color{white!80!navy} \dipartimento};
+
+  % Logo opzionale (immagini/logo-univpm.png, sfondo bianco arrotondato)
+  \IfFileExists{immagini/logo-univpm.png}{%
+    \node[anchor=north east, fill=white, rounded corners=3pt, inner sep=4pt]
+      at ([xshift=-2.2cm, yshift=-1.0cm]current page.north east)
+      {\includegraphics[height=1.4cm]{immagini/logo-univpm.png}};
+  }{%
+    % Scudo con spunta se il logo non c'è
+    \begin{scope}[shift={([xshift=-3.2cm, yshift=-1.9cm]current page.north east)}, scale=0.8]
+      \path[fill=teal!85, draw=white, line width=1.2pt]
+        (0,1) -- (0.95,0.7) -- (0.95,-0.1)
+        .. controls (0.95,-0.75) and (0.3,-1.15) .. (0,-1.3)
+        .. controls (-0.3,-1.15) and (-0.95,-0.75) .. (-0.95,-0.1)
+        -- (-0.95,0.7) -- cycle;
+      \draw[white, line width=2.2pt, line cap=round, line join=round]
+        (-0.42,-0.02) -- (-0.1,-0.38) -- (0.45,0.38);
+    \end{scope}
+  }
+
+  % Catena di blocchi (blockchain)
+  \coordinate (o) at ([xshift=2.2cm, yshift=-4.1cm]current page.north west);
+  \foreach \i/\h in {0/a3f9, 1/7c2e, 2/e41b, 3/09d8, 4/5bb6, 5/c7a1} {
+    \draw[teal!80!white, line width=1pt, rounded corners=2pt, fill=white, fill opacity=0.07]
+      ([xshift=2.75cm*\i]o) rectangle ++(1.5,-1.0);
+    \node[font=\ttfamily\scriptsize, text=white, anchor=center]
+      at ([xshift=2.75cm*\i+0.75cm, yshift=-0.32cm]o) {\#\h};
+    \node[font=\ttfamily\tiny, text=teal!40!white, anchor=center]
+      at ([xshift=2.75cm*\i+0.75cm, yshift=-0.7cm]o) {block \i};
+  }
+  \foreach \i in {0,...,4} {
+    \draw[teal!80!white, line width=1pt, -{Stealth[length=4pt]}]
+      ([xshift=2.75cm*\i+1.5cm, yshift=-0.5cm]o) -- ++(1.25,0);
+  }
+
+  % Striscia "codice a barre" di hash in fondo alla pagina
+  \begin{scope}
+    \pgfmathsetseed{42}
+    \foreach \i in {0,...,59} {
+      \pgfmathsetmacro{\w}{0.04 + 0.1*rnd}
+      \pgfmathsetmacro{\o}{0.25 + 0.55*rnd}
+      \fill[navy, opacity=\o]
+        ([xshift=2.2cm+0.26cm*\i, yshift=1.3cm]current page.south west)
+        rectangle ++(\w, 0.55);
+    }
+  \end{scope}
+  \node[font=\ttfamily\tiny, text=navy!70, anchor=north west]
+    at ([xshift=2.2cm, yshift=1.25cm]current page.south west)
+    {sha256: 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08};
+\end{tikzpicture}
+
+% ---------- Contenuto testuale ----------
+\vspace*{4.6cm}
+
+\begin{flushleft}
+  {\sffamily\bfseries\color{teal}\large\MakeUppercase{\corso}}\\[3pt]
+  {\sffamily\small\color{gray} \corsodilaurea}\\[1.4cm]
+
+  {\sffamily\bfseries\fontsize{26}{30}\selectfont\color{navy} \titoloprogetto}\\[0.5cm]
+  {\sffamily\large\color{navy!70} \sottotitolo}\\[0.3cm]
+  {\color{teal}\rule{4cm}{2pt}}
+\end{flushleft}
+
+\vspace{1.2cm}
+
+% Gruppo di lavoro
+\begin{minipage}[t]{0.56\textwidth}
+  {\sffamily\bfseries\small\color{teal}\MakeUppercase{Gruppo di lavoro}}\\[6pt]
+  \begin{tabular}{@{}l@{\hspace{1.2em}}l@{}}
+    \studenteA & {\ttfamily\small\color{gray}\matricolaA}\\[2pt]
+    \studenteB & {\ttfamily\small\color{gray}\matricolaB}\\[2pt]
+    \studenteC & {\ttfamily\small\color{gray}\matricolaC}\\[2pt]
+    \studenteD & {\ttfamily\small\color{gray}\matricolaD}
+  \end{tabular}
+\end{minipage}%
+\begin{minipage}[t]{0.40\textwidth}
+  {\sffamily\bfseries\small\color{teal}\MakeUppercase{Docente}}\\[4pt]
+  \docente\\[0.5cm]
+  {\sffamily\bfseries\small\color{teal}\MakeUppercase{Assistente del docente}}\\[4pt]
+  \assistente
+\end{minipage}
+
+\vfill
+
+\begin{flushleft}
+  {\sffamily\small Anno accademico \annoaccademico \quad\textbullet\quad \dataconsegna}
+  \ifx\repository\empty\else\\[2pt]{\ttfamily\footnotesize\color{gray}\url{\repository}}\fi
+\end{flushleft}
+\vspace{2.4cm}
+\end{titlepage}
