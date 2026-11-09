@@ -1,0 +1,472 @@
+{
+  "datastructures": [],
+  "concepts": [],
+  "reinforcements": [],
+  "actors": [
+    {
+      "id": "c09d77de-ec68-41a3-a757-11b58c888a07",
+      "text": "DAST",
+      "type": "istar.Actor",
+      "x": 499,
+      "y": 60,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": []
+    },
+    {
+      "id": "56bbc840-9ace-4cfc-be69-b910c487991b",
+      "text": "SAST",
+      "type": "istar.Actor",
+      "x": 316,
+      "y": 194,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": []
+    },
+    {
+      "id": "97f58b1e-ce8b-44a0-a078-9c4d4e0674fc",
+      "text": "LLM",
+      "type": "istar.Actor",
+      "x": 720,
+      "y": 152,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": []
+    },
+    {
+      "id": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "text": "Requester",
+      "type": "istar.Actor",
+      "x": 112,
+      "y": 513,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": [
+        {
+          "id": "91b10ead-ae88-4bd9-964d-9bf187cbaa5b",
+          "text": "Known that the software is secure",
+          "type": "istar.Quality",
+          "x": 255,
+          "y": 521,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "4f2fd939-65f0-46a3-8343-2eb44b51704e",
+          "text": "Known the vulnerability",
+          "type": "istar.Goal",
+          "x": 193,
+          "y": 612,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "8e0021e5-a88a-43dd-a9d4-9e56a787781c",
+          "text": "Certificate",
+          "type": "istar.Resource",
+          "x": 112,
+          "y": 747,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "ef3cc6f7-636d-472f-82dc-499c6f38b97f",
+          "text": "Software traceability",
+          "type": "istar.Goal",
+          "x": 302,
+          "y": 614,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "70590582-e704-45ab-b616-574df89dd5ed",
+          "text": "SBOM",
+          "type": "istar.Resource",
+          "x": 363,
+          "y": 747,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "538893a1-0037-4fc1-9edb-947f07f8d5cb",
+          "text": "Analyze vulnerability",
+          "type": "istar.Task",
+          "x": 146,
+          "y": 673,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "4eb60fd9-6fc7-4af0-a59a-a3e244fcf439",
+          "text": "Analyze traceability",
+          "type": "istar.Task",
+          "x": 336,
+          "y": 673,
+          "customProperties": {
+            "Description": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "195260c2-fa1e-4958-9e49-722c56031176",
+      "text": "Developer",
+      "type": "istar.Actor",
+      "x": 522,
+      "y": 550,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": [
+        {
+          "id": "c78b7b19-43f0-4a5c-b885-1ba71bf73aa0",
+          "text": "Develop a secure software",
+          "type": "istar.Quality",
+          "x": 622,
+          "y": 557,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "7d02f7f0-266a-4891-bfe3-598b7a885757",
+          "text": "Exploit vulnerability",
+          "type": "istar.Goal",
+          "x": 538,
+          "y": 631,
+          "customProperties": {
+            "Description": ""
+          }
+        },
+        {
+          "id": "d8a5bf3a-f928-4ab5-ad6f-63ccc2047411",
+          "text": "Taking trace of software components",
+          "type": "istar.Task",
+          "x": 648,
+          "y": 646,
+          "customProperties": {
+            "Description": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "d2a65db5-c4c1-4993-8620-85410eb562eb",
+      "text": "Verifier",
+      "type": "istar.Actor",
+      "x": 522,
+      "y": 198,
+      "customProperties": {
+        "Description": ""
+      },
+      "nodes": []
+    }
+  ],
+  "orphans": [],
+  "dependencies": [
+    {
+      "id": "0a2abb07-3711-4a37-b8af-33d658470800",
+      "text": "SBOM",
+      "type": "istar.Resource",
+      "x": 328,
+      "y": 567,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "ff7d26a7-4671-4c67-8ef1-29f1e4ad7850",
+      "text": "Certificate",
+      "type": "istar.Resource",
+      "x": 299,
+      "y": 452,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "76e366a2-52c0-4dc6-bc35-b541a32cc027",
+      "text": "Code",
+      "type": "istar.Resource",
+      "x": 410,
+      "y": 331,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "d2a65db5-c4c1-4993-8620-85410eb562eb",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "661284ba-6222-45a2-9dca-578fa87327ac",
+      "text": "Certificate",
+      "type": "istar.Resource",
+      "x": 753,
+      "y": 330,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "195260c2-fa1e-4958-9e49-722c56031176",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "ef74ba5c-4e4c-4a5e-a693-59443af895f4",
+      "text": "Make certificate",
+      "type": "istar.Task",
+      "x": 631,
+      "y": 333,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "195260c2-fa1e-4958-9e49-722c56031176",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "168a94d5-1eac-4acb-9098-96e321e80110",
+      "text": "Analyze code",
+      "type": "istar.Task",
+      "x": 526,
+      "y": 333,
+      "customProperties": {
+        "Description": ""
+      },
+      "reinforcedBy": [],
+      "directionFlow": "outbound",
+      "source": "d2a65db5-c4c1-4993-8620-85410eb562eb",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "5258cb0f-f54f-4893-8a49-7f7365bcbd33",
+      "text": "Program",
+      "type": "istar.Resource",
+      "x": 283,
+      "y": 510,
+      "customProperties": {
+        "Description": ""
+      },
+      "directionFlow": "outbound",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    }
+  ],
+  "links": [
+    {
+      "id": "7ba6ca79-58ec-405e-b479-2775d5c60930",
+      "type": "istar.DependencyLink",
+      "source": "5258cb0f-f54f-4893-8a49-7f7365bcbd33",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "06789459-dabd-449e-ba9a-74018f3534db",
+      "type": "istar.DependencyLink",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "5258cb0f-f54f-4893-8a49-7f7365bcbd33"
+    },
+    {
+      "id": "8abb1449-fb7f-4bba-95f1-8bb7fcc38b72",
+      "type": "istar.DependencyLink",
+      "source": "168a94d5-1eac-4acb-9098-96e321e80110",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "62eb0b52-9cde-4b7e-91e8-08efa954b340",
+      "type": "istar.DependencyLink",
+      "source": "d2a65db5-c4c1-4993-8620-85410eb562eb",
+      "target": "168a94d5-1eac-4acb-9098-96e321e80110"
+    },
+    {
+      "id": "629eb3a1-b4ea-49c1-8960-f1177a2b0659",
+      "type": "istar.DependencyLink",
+      "source": "ef74ba5c-4e4c-4a5e-a693-59443af895f4",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "fc2e274a-dfd1-42b3-806c-2228807e7f37",
+      "type": "istar.DependencyLink",
+      "source": "195260c2-fa1e-4958-9e49-722c56031176",
+      "target": "ef74ba5c-4e4c-4a5e-a693-59443af895f4"
+    },
+    {
+      "id": "afe1b8fb-8664-457e-b75d-7b71df108050",
+      "type": "istar.DependencyLink",
+      "source": "661284ba-6222-45a2-9dca-578fa87327ac",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "f95ca7bb-263b-47ad-abfc-2a01c09b98de",
+      "type": "istar.DependencyLink",
+      "source": "195260c2-fa1e-4958-9e49-722c56031176",
+      "target": "661284ba-6222-45a2-9dca-578fa87327ac"
+    },
+    {
+      "id": "88958f72-5fb4-48cd-a1d6-b26452477d7e",
+      "type": "istar.DependencyLink",
+      "source": "76e366a2-52c0-4dc6-bc35-b541a32cc027",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "569ea2d3-8e59-4c05-b5c0-b0ffd8ef4f94",
+      "type": "istar.DependencyLink",
+      "source": "d2a65db5-c4c1-4993-8620-85410eb562eb",
+      "target": "76e366a2-52c0-4dc6-bc35-b541a32cc027"
+    },
+    {
+      "id": "3683874a-2b9c-45d7-9ce2-fc90af415756",
+      "type": "istar.DependencyLink",
+      "source": "ff7d26a7-4671-4c67-8ef1-29f1e4ad7850",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "5071dc00-0321-43af-af8f-0c6530764fd0",
+      "type": "istar.DependencyLink",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "ff7d26a7-4671-4c67-8ef1-29f1e4ad7850"
+    },
+    {
+      "id": "cde78fe7-b0b5-4a21-a2ee-2436d54caca5",
+      "type": "istar.DependencyLink",
+      "source": "0a2abb07-3711-4a37-b8af-33d658470800",
+      "target": "195260c2-fa1e-4958-9e49-722c56031176"
+    },
+    {
+      "id": "d1483915-f2c0-465b-bb24-058d4393f3bb",
+      "type": "istar.DependencyLink",
+      "source": "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a",
+      "target": "0a2abb07-3711-4a37-b8af-33d658470800"
+    },
+    {
+      "id": "72dce077-b9ec-4a85-9f80-51660bca8467",
+      "type": "istar.IsALink",
+      "source": "97f58b1e-ce8b-44a0-a078-9c4d4e0674fc",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "f1097aa3-c174-47cf-ab25-25e86e3d5e04",
+      "type": "istar.IsALink",
+      "source": "56bbc840-9ace-4cfc-be69-b910c487991b",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "ae5b8b1c-b0dd-4cb0-965c-e040def5d567",
+      "type": "istar.IsALink",
+      "source": "c09d77de-ec68-41a3-a757-11b58c888a07",
+      "target": "d2a65db5-c4c1-4993-8620-85410eb562eb"
+    },
+    {
+      "id": "f8182280-58ec-4dab-95ec-a0ee9679dde6",
+      "type": "istar.ContributionLink",
+      "source": "4f2fd939-65f0-46a3-8343-2eb44b51704e",
+      "target": "91b10ead-ae88-4bd9-964d-9bf187cbaa5b",
+      "label": "make"
+    },
+    {
+      "id": "7ede6d56-291d-4d9f-a337-bb5d79045f61",
+      "type": "istar.ContributionLink",
+      "source": "ef3cc6f7-636d-472f-82dc-499c6f38b97f",
+      "target": "91b10ead-ae88-4bd9-964d-9bf187cbaa5b",
+      "label": "make"
+    },
+    {
+      "id": "0287c803-de34-4448-9dcf-042e208f0719",
+      "type": "istar.AndRefinementLink",
+      "source": "538893a1-0037-4fc1-9edb-947f07f8d5cb",
+      "target": "4f2fd939-65f0-46a3-8343-2eb44b51704e"
+    },
+    {
+      "id": "0037b327-dc20-46e0-9614-f3e8a055ec4c",
+      "type": "istar.NeededByLink",
+      "source": "8e0021e5-a88a-43dd-a9d4-9e56a787781c",
+      "target": "538893a1-0037-4fc1-9edb-947f07f8d5cb"
+    },
+    {
+      "id": "c3bb69a3-fcd2-4e61-8f9c-8304634e1729",
+      "type": "istar.AndRefinementLink",
+      "source": "4eb60fd9-6fc7-4af0-a59a-a3e244fcf439",
+      "target": "ef3cc6f7-636d-472f-82dc-499c6f38b97f"
+    },
+    {
+      "id": "9320f379-2642-4c82-86e4-1b470acf5be9",
+      "type": "istar.NeededByLink",
+      "source": "70590582-e704-45ab-b616-574df89dd5ed",
+      "target": "4eb60fd9-6fc7-4af0-a59a-a3e244fcf439"
+    }
+  ],
+  "display": {
+    "ef74ba5c-4e4c-4a5e-a693-59443af895f4": {
+      "width": 90,
+      "height": 35
+    },
+    "f1097aa3-c174-47cf-ab25-25e86e3d5e04": {
+      "vertices": [
+        {
+          "x": 404,
+          "y": 221
+        }
+      ]
+    },
+    "f8182280-58ec-4dab-95ec-a0ee9679dde6": {
+      "vertices": [
+        {
+          "x": 258,
+          "y": 595
+        }
+      ]
+    },
+    "7ede6d56-291d-4d9f-a337-bb5d79045f61": {
+      "vertices": [
+        {
+          "x": 331,
+          "y": 600
+        }
+      ]
+    },
+    "c09d77de-ec68-41a3-a757-11b58c888a07": {
+      "collapsed": true
+    },
+    "56bbc840-9ace-4cfc-be69-b910c487991b": {
+      "collapsed": true
+    },
+    "97f58b1e-ce8b-44a0-a078-9c4d4e0674fc": {
+      "collapsed": true
+    },
+    "34ebdc8c-840a-4c50-bbd8-186b3a85ed5a": {
+      "collapsed": true
+    },
+    "d2a65db5-c4c1-4993-8620-85410eb562eb": {
+      "collapsed": true
+    }
+  },
+  "tool": "pistar.2.1.0",
+  "istar": "2.0",
+  "saveDate": "Mon, 09 Nov 2026 19:56:34 GMT",
+  "diagram": {
+    "width": 1000,
+    "height": 822,
+    "customProperties": {
+      "Description": ""
+    }
+  }
+}
