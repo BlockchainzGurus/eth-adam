@@ -1,0 +1,319 @@
+{
+  "actors": [
+    {
+      "id": "actor-mwi7k1v5-fsa7l",
+      "text": "Varifier",
+      "type": "istar.Actor",
+      "x": 515,
+      "y": 231,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi7klm5-ymaxc",
+      "text": "SAST",
+      "type": "istar.Actor",
+      "x": 674,
+      "y": 101,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi7kyky-vatpa",
+      "text": "DAST",
+      "type": "istar.Actor",
+      "x": 676,
+      "y": 232,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi7lc4n-wfd16",
+      "text": "LLM",
+      "type": "istar.Actor",
+      "x": 674,
+      "y": 382,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi7mrup-dnims",
+      "text": "Developer",
+      "type": "istar.Actor",
+      "x": -68,
+      "y": -24,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-mwi7pc8k-nqudf",
+          "text": "Certificate",
+          "type": "istar.Resource",
+          "x": 112,
+          "y": 273,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7prob-k84w8",
+          "text": "Code",
+          "type": "istar.Resource",
+          "x": 259,
+          "y": 238,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7pyjb-k9bxa",
+          "text": "SBOM",
+          "type": "istar.Resource",
+          "x": -40,
+          "y": 218,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7vfyb-kttkr",
+          "text": "Develop a secure code",
+          "type": "istar.Quality",
+          "x": 150,
+          "y": 59,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7xx88-tauzc",
+          "text": "Trace of components",
+          "type": "istar.Task",
+          "x": -43,
+          "y": 130,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7yas9-448yb",
+          "text": "Exploit vulnerability",
+          "type": "istar.Task",
+          "x": 216,
+          "y": 156,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-mwi7nm2g-wglog",
+      "text": "Requester",
+      "type": "istar.Actor",
+      "x": 2,
+      "y": 403,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-mwi80wa4-cy91b",
+          "text": "Knowing that software is secure",
+          "type": "istar.Quality",
+          "x": 212,
+          "y": 473,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi82085-7q7q1",
+          "text": "Knowing vulnerability",
+          "type": "istar.Goal",
+          "x": 376,
+          "y": 555,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi83g0j-hrvll",
+          "text": "Software traceability",
+          "type": "istar.Goal",
+          "x": 4,
+          "y": 594,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi8427c-gp1n0",
+          "text": "Program",
+          "type": "istar.Resource",
+          "x": 333,
+          "y": 772,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi84g4k-koil9",
+          "text": "Analyze program",
+          "type": "istar.Task",
+          "x": 418,
+          "y": 662,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi84z50-uc1ki",
+          "text": "Analyze vulnerability",
+          "type": "istar.Task",
+          "x": 213,
+          "y": 643,
+          "customProperties": {}
+        }
+      ]
+    }
+  ],
+  "orphans": [],
+  "dependencies": [
+    {
+      "id": "dep-mwi7rb16-iwga1",
+      "text": "Knowing secure of developed code",
+      "type": "istar.Goal",
+      "x": 484,
+      "y": 347,
+      "source": "el-mwi7pc8k-nqudf",
+      "target": "actor-mwi7k1v5-fsa7l",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwi7ujpv-x3r5z",
+      "text": "Analyze code",
+      "type": "istar.Task",
+      "x": 488,
+      "y": 96,
+      "source": "actor-mwi7k1v5-fsa7l",
+      "target": "el-mwi7prob-k84w8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwi891jb-f6fw5",
+      "text": "Get the list of dependencies",
+      "type": "istar.Task",
+      "x": -144,
+      "y": 442,
+      "source": "el-mwi83g0j-hrvll",
+      "target": "el-mwi7pyjb-k9bxa",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwi8b3nz-sxd7o",
+      "text": "Knowing that program passed tests",
+      "type": "istar.Goal",
+      "x": 70,
+      "y": 451,
+      "source": "el-mwi84z50-uc1ki",
+      "target": "el-mwi7pc8k-nqudf",
+      "customProperties": {}
+    }
+  ],
+  "links": [
+    {
+      "id": "link-mwi7m406-xbnbi",
+      "type": "istar.IsALink",
+      "source": "actor-mwi7lc4n-wfd16",
+      "target": "actor-mwi7k1v5-fsa7l"
+    },
+    {
+      "id": "link-mwi7m8pr-xsv73",
+      "type": "istar.IsALink",
+      "source": "actor-mwi7kyky-vatpa",
+      "target": "actor-mwi7k1v5-fsa7l"
+    },
+    {
+      "id": "link-mwi7md8a-6t491",
+      "type": "istar.IsALink",
+      "source": "actor-mwi7klm5-ymaxc",
+      "target": "actor-mwi7k1v5-fsa7l"
+    },
+    {
+      "id": "link-mwi7z0de-xjrbt",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi7yas9-448yb",
+      "target": "el-mwi7vfyb-kttkr",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi7z3k9-vzmyq",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi7xx88-tauzc",
+      "target": "el-mwi7vfyb-kttkr",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi7zm4b-w9960",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi7pyjb-k9bxa",
+      "target": "el-mwi7xx88-tauzc"
+    },
+    {
+      "id": "link-mwi801ak-wf7n0",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi7pc8k-nqudf",
+      "target": "el-mwi7yas9-448yb"
+    },
+    {
+      "id": "link-mwi802xb-y9fzl",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi7prob-k84w8",
+      "target": "el-mwi7yas9-448yb"
+    },
+    {
+      "id": "link-mwi85tex-57hwv",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi82085-7q7q1",
+      "target": "el-mwi80wa4-cy91b",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi85wds-2iniz",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi83g0j-hrvll",
+      "target": "el-mwi80wa4-cy91b",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi86vju-38akn",
+      "type": "istar.AndRefinementLink",
+      "source": "el-mwi84g4k-koil9",
+      "target": "el-mwi82085-7q7q1"
+    },
+    {
+      "id": "link-mwi872sa-stj2k",
+      "type": "istar.AndRefinementLink",
+      "source": "el-mwi84z50-uc1ki",
+      "target": "el-mwi82085-7q7q1"
+    },
+    {
+      "id": "link-mwi87gy2-1ukd5",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi8427c-gp1n0",
+      "target": "el-mwi84g4k-koil9"
+    }
+  ],
+  "display": {
+    "actor-mwi7k1v5-fsa7l": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi7klm5-ymaxc": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi7kyky-vatpa": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi7lc4n-wfd16": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi7mrup-dnims": {
+      "collapsed": false,
+      "width": 463.33705357142856,
+      "height": 373.79371279761915
+    },
+    "actor-mwi7nm2g-wglog": {
+      "collapsed": false,
+      "width": 558.5211286767035,
+      "height": 444.5160140913913
+    }
+  },
+  "tool": "pistar.2.1.0",
+  "istar": "2.0",
+  "saveDate": "2026-11-15T19:30:04.998Z",
+  "name": "Untitled i* 2.0 Model"
+}
