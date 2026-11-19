@@ -25,14 +25,6 @@
           "customProperties": {}
         },
         {
-          "id": "el-mwi7pyjb-k9bxa",
-          "text": "SBOM",
-          "type": "istar.Resource",
-          "x": -36,
-          "y": 274,
-          "customProperties": {}
-        },
-        {
           "id": "el-mwi7vfyb-kttkr",
           "text": "Develop a secure code",
           "type": "istar.Quality",
@@ -50,7 +42,7 @@
         },
         {
           "id": "el-mwi7yas9-448yb",
-          "text": "Exploit vulnerability",
+          "text": "Found vulnerability",
           "type": "istar.Task",
           "x": 216,
           "y": 156,
@@ -62,7 +54,7 @@
       "id": "actor-mwi7nm2g-wglog",
       "text": "Requester",
       "type": "istar.Actor",
-      "x": 27,
+      "x": 5,
       "y": 519,
       "customProperties": {},
       "nodes": [
@@ -155,6 +147,22 @@
           "x": 966,
           "y": 306,
           "customProperties": {}
+        },
+        {
+          "id": "el-mwnfax5k-4gn8l",
+          "text": "Generate SBOM",
+          "type": "istar.Task",
+          "x": 925,
+          "y": 401,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwnfbg92-c6zfr",
+          "text": "SBOM",
+          "type": "istar.Resource",
+          "x": 957,
+          "y": 488,
+          "customProperties": {}
         }
       ]
     },
@@ -198,16 +206,6 @@
   "orphans": [],
   "dependencies": [
     {
-      "id": "dep-mwi891jb-f6fw5",
-      "text": "Get the list of dependencies",
-      "type": "istar.Task",
-      "x": -144,
-      "y": 442,
-      "source": "el-mwi83g0j-hrvll",
-      "target": "el-mwi7pyjb-k9bxa",
-      "customProperties": {}
-    },
-    {
       "id": "dep-mwi8b3nz-sxd7o",
       "text": "Knowing that program passed tests",
       "type": "istar.Goal",
@@ -220,7 +218,7 @@
     {
       "id": "dep-mwi8nxrv-p03ce",
       "text": "Get the Git URL",
-      "type": "istar.Task",
+      "type": "istar.Resource",
       "x": 537,
       "y": 128,
       "source": "el-mwi8lq13-ys4y0",
@@ -230,7 +228,7 @@
     {
       "id": "dep-mwi8rtcp-hxxtb",
       "text": "Get the Git URL",
-      "type": "istar.Task",
+      "type": "istar.Resource",
       "x": 1161,
       "y": 569,
       "source": "actor-mwi8h0a7-qbopg",
@@ -268,22 +266,12 @@
       "customProperties": {}
     },
     {
-      "id": "dep-mwidukwt-o20ro",
-      "text": "Ask trace",
-      "type": "istar.Task",
-      "x": 992,
-      "y": 565,
-      "source": "el-mwidsrof-jkfph",
-      "target": "actor-mwi8h0a7-qbopg",
-      "customProperties": {}
-    },
-    {
       "id": "dep-mwidwpyk-5o0mq",
       "text": "Detect other dependencies",
       "type": "istar.Quality",
       "x": 511,
       "y": 274,
-      "source": "el-mwi7pyjb-k9bxa",
+      "source": "actor-mwi7mrup-dnims",
       "target": "el-mwidsrof-jkfph",
       "customProperties": {}
     },
@@ -295,6 +283,26 @@
       "y": 428,
       "source": "el-mwi83g0j-hrvll",
       "target": "el-mwidjxfs-jtrq8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwnf6ex9-3ytsf",
+      "text": "Log in",
+      "type": "istar.Goal",
+      "x": 540,
+      "y": 212,
+      "source": "actor-mwi7mrup-dnims",
+      "target": "actor-mwi8e8cq-9obwt",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwnf9qer-1foxg",
+      "text": "Log In",
+      "type": "istar.Goal",
+      "x": 588,
+      "y": 485,
+      "source": "actor-mwi7nm2g-wglog",
+      "target": "actor-mwi8e8cq-9obwt",
       "customProperties": {}
     }
   ],
@@ -312,12 +320,6 @@
       "source": "el-mwi7xx88-tauzc",
       "target": "el-mwi7vfyb-kttkr",
       "label": "make"
-    },
-    {
-      "id": "link-mwi7zm4b-w9960",
-      "type": "istar.NeededByLink",
-      "source": "el-mwi7pyjb-k9bxa",
-      "target": "el-mwi7xx88-tauzc"
     },
     {
       "id": "link-mwi801ak-wf7n0",
@@ -401,6 +403,18 @@
       "source": "el-mwidsrof-jkfph",
       "target": "el-mwi8lq13-ys4y0",
       "label": "help"
+    },
+    {
+      "id": "link-mwnfb7he-jazuj",
+      "type": "istar.AndRefinementLink",
+      "source": "el-mwnfax5k-4gn8l",
+      "target": "el-mwidsrof-jkfph"
+    },
+    {
+      "id": "link-mwnfbttx-0ulwi",
+      "type": "istar.NeededByLink",
+      "source": "el-mwnfbg92-c6zfr",
+      "target": "el-mwnfax5k-4gn8l"
     }
   ],
   "display": {
@@ -417,7 +431,7 @@
     "actor-mwi8e8cq-9obwt": {
       "collapsed": false,
       "width": 546.2355957031249,
-      "height": 538
+      "height": 544
     },
     "actor-mwi8fa2e-nhe9s": {
       "collapsed": true,
@@ -442,6 +456,6 @@
   },
   "tool": "pistar.2.1.0",
   "istar": "2.0",
-  "saveDate": "2026-11-15T22:07:29.749Z",
+  "saveDate": "2026-11-19T10:51:30.139Z",
   "name": "Untitled i* 2.0 Model"
 }
