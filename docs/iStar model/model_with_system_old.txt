@@ -1,0 +1,461 @@
+{
+  "actors": [
+    {
+      "id": "actor-mwi7mrup-dnims",
+      "text": "Developer",
+      "type": "istar.Actor",
+      "x": -68,
+      "y": -24,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-mwi7pc8k-nqudf",
+          "text": "Certificate",
+          "type": "istar.Resource",
+          "x": 158,
+          "y": 334,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7prob-k84w8",
+          "text": "Code",
+          "type": "istar.Resource",
+          "x": 291,
+          "y": 233,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7vfyb-kttkr",
+          "text": "Develop a secure code",
+          "type": "istar.Quality",
+          "x": 160,
+          "y": 22,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7xx88-tauzc",
+          "text": "Trace of components",
+          "type": "istar.Task",
+          "x": -43,
+          "y": 130,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi7yas9-448yb",
+          "text": "Found vulnerability",
+          "type": "istar.Task",
+          "x": 216,
+          "y": 156,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-mwi7nm2g-wglog",
+      "text": "Requester",
+      "type": "istar.Actor",
+      "x": 5,
+      "y": 519,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-mwi80wa4-cy91b",
+          "text": "Knowing that software is secure",
+          "type": "istar.Quality",
+          "x": 237,
+          "y": 589,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi82085-7q7q1",
+          "text": "Knowing vulnerability",
+          "type": "istar.Goal",
+          "x": 450,
+          "y": 611,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi83g0j-hrvll",
+          "text": "Software traceability",
+          "type": "istar.Goal",
+          "x": 29,
+          "y": 710,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi8427c-gp1n0",
+          "text": "Program",
+          "type": "istar.Resource",
+          "x": 358,
+          "y": 889,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi84g4k-koil9",
+          "text": "Analyze program",
+          "type": "istar.Task",
+          "x": 432,
+          "y": 798,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi84z50-uc1ki",
+          "text": "Analyze vulnerability",
+          "type": "istar.Task",
+          "x": 238,
+          "y": 760,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-mwi8e8cq-9obwt",
+      "text": "System",
+      "type": "istar.Actor",
+      "x": 740,
+      "y": 7,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-mwi8lq13-ys4y0",
+          "text": "Analyze quality of software",
+          "type": "istar.Quality",
+          "x": 969,
+          "y": 83,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwi8p8ps-2rior",
+          "text": "Coordinate analysis systems",
+          "type": "istar.Goal",
+          "x": 1110,
+          "y": 272,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwidjxfs-jtrq8",
+          "text": "Save results",
+          "type": "istar.Goal",
+          "x": 790,
+          "y": 337,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwidsrof-jkfph",
+          "text": "Trace of components",
+          "type": "istar.Goal",
+          "x": 966,
+          "y": 306,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwnfax5k-4gn8l",
+          "text": "Generate SBOM",
+          "type": "istar.Task",
+          "x": 925,
+          "y": 401,
+          "customProperties": {}
+        },
+        {
+          "id": "el-mwnfbg92-c6zfr",
+          "text": "SBOM",
+          "type": "istar.Resource",
+          "x": 957,
+          "y": 488,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-mwi8fa2e-nhe9s",
+      "text": "SAST",
+      "type": "istar.Actor",
+      "x": 717,
+      "y": 805,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi8fjmd-jekgs",
+      "text": "DAST",
+      "type": "istar.Actor",
+      "x": 862,
+      "y": 830,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi8fuqd-nie34",
+      "text": "LLM",
+      "type": "istar.Actor",
+      "x": 992,
+      "y": 807,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-mwi8h0a7-qbopg",
+      "text": "Verifier",
+      "type": "istar.Actor",
+      "x": 854,
+      "y": 656,
+      "customProperties": {},
+      "nodes": []
+    }
+  ],
+  "orphans": [],
+  "dependencies": [
+    {
+      "id": "dep-mwi8b3nz-sxd7o",
+      "text": "Knowing that program passed tests",
+      "type": "istar.Goal",
+      "x": 70,
+      "y": 451,
+      "source": "el-mwi84z50-uc1ki",
+      "target": "el-mwi7pc8k-nqudf",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwi8nxrv-p03ce",
+      "text": "Git URL",
+      "type": "istar.Resource",
+      "x": 537,
+      "y": 128,
+      "source": "el-mwi8p8ps-2rior",
+      "target": "el-mwi7prob-k84w8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwi8rtcp-hxxtb",
+      "text": "Git URL",
+      "type": "istar.Resource",
+      "x": 1161,
+      "y": 569,
+      "source": "actor-mwi8h0a7-qbopg",
+      "target": "el-mwi8p8ps-2rior",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwidlp15-9nski",
+      "text": "Knowing results",
+      "type": "istar.Quality",
+      "x": 838,
+      "y": 562,
+      "source": "el-mwidjxfs-jtrq8",
+      "target": "actor-mwi8h0a7-qbopg",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwidn227-vhprt",
+      "text": "Verifying results",
+      "type": "istar.Goal",
+      "x": 705,
+      "y": 683,
+      "source": "el-mwi84z50-uc1ki",
+      "target": "el-mwidjxfs-jtrq8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwidqlrk-0wjiq",
+      "text": "Knowing that program passed tests",
+      "type": "istar.Goal",
+      "x": 475,
+      "y": 336,
+      "source": "el-mwi7pc8k-nqudf",
+      "target": "el-mwidjxfs-jtrq8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwidwpyk-5o0mq",
+      "text": "Detect other dependencies",
+      "type": "istar.Quality",
+      "x": 511,
+      "y": 274,
+      "source": "actor-mwi7mrup-dnims",
+      "target": "el-mwidsrof-jkfph",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwidxeul-9hijq",
+      "text": "Verifying dependencies",
+      "type": "istar.Goal",
+      "x": 222,
+      "y": 428,
+      "source": "el-mwi83g0j-hrvll",
+      "target": "el-mwidjxfs-jtrq8",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwnf6ex9-3ytsf",
+      "text": "Log in",
+      "type": "istar.Goal",
+      "x": 540,
+      "y": 212,
+      "source": "actor-mwi7mrup-dnims",
+      "target": "actor-mwi8e8cq-9obwt",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-mwnf9qer-1foxg",
+      "text": "Log in",
+      "type": "istar.Goal",
+      "x": 588,
+      "y": 485,
+      "source": "actor-mwi7nm2g-wglog",
+      "target": "actor-mwi8e8cq-9obwt",
+      "customProperties": {}
+    }
+  ],
+  "links": [
+    {
+      "id": "link-mwi7z0de-xjrbt",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi7yas9-448yb",
+      "target": "el-mwi7vfyb-kttkr",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi7z3k9-vzmyq",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi7xx88-tauzc",
+      "target": "el-mwi7vfyb-kttkr",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi801ak-wf7n0",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi7pc8k-nqudf",
+      "target": "el-mwi7yas9-448yb"
+    },
+    {
+      "id": "link-mwi802xb-y9fzl",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi7prob-k84w8",
+      "target": "el-mwi7yas9-448yb"
+    },
+    {
+      "id": "link-mwi85tex-57hwv",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi82085-7q7q1",
+      "target": "el-mwi80wa4-cy91b",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi85wds-2iniz",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi83g0j-hrvll",
+      "target": "el-mwi80wa4-cy91b",
+      "label": "make"
+    },
+    {
+      "id": "link-mwi86vju-38akn",
+      "type": "istar.AndRefinementLink",
+      "source": "el-mwi84g4k-koil9",
+      "target": "el-mwi82085-7q7q1"
+    },
+    {
+      "id": "link-mwi872sa-stj2k",
+      "type": "istar.AndRefinementLink",
+      "source": "el-mwi84z50-uc1ki",
+      "target": "el-mwi82085-7q7q1"
+    },
+    {
+      "id": "link-mwi87gy2-1ukd5",
+      "type": "istar.NeededByLink",
+      "source": "el-mwi8427c-gp1n0",
+      "target": "el-mwi84g4k-koil9"
+    },
+    {
+      "id": "link-mwi8hurx-ssipe",
+      "type": "istar.IsALink",
+      "source": "actor-mwi8fa2e-nhe9s",
+      "target": "actor-mwi8h0a7-qbopg"
+    },
+    {
+      "id": "link-mwi8hz84-up8me",
+      "type": "istar.IsALink",
+      "source": "actor-mwi8fjmd-jekgs",
+      "target": "actor-mwi8h0a7-qbopg"
+    },
+    {
+      "id": "link-mwi8i2ky-l3wdw",
+      "type": "istar.IsALink",
+      "source": "actor-mwi8fuqd-nie34",
+      "target": "actor-mwi8h0a7-qbopg"
+    },
+    {
+      "id": "link-mwi8qqeb-vk09m",
+      "type": "istar.ContributionLink",
+      "source": "el-mwi8p8ps-2rior",
+      "target": "el-mwi8lq13-ys4y0",
+      "label": "make"
+    },
+    {
+      "id": "link-mwidkie7-eug48",
+      "type": "istar.ContributionLink",
+      "source": "el-mwidjxfs-jtrq8",
+      "target": "el-mwi8lq13-ys4y0",
+      "label": "help"
+    },
+    {
+      "id": "link-mwidt8yy-eoc5g",
+      "type": "istar.ContributionLink",
+      "source": "el-mwidsrof-jkfph",
+      "target": "el-mwi8lq13-ys4y0",
+      "label": "help"
+    },
+    {
+      "id": "link-mwnfb7he-jazuj",
+      "type": "istar.OrRefinementLink",
+      "source": "el-mwnfax5k-4gn8l",
+      "target": "el-mwidsrof-jkfph"
+    },
+    {
+      "id": "link-mwnfbttx-0ulwi",
+      "type": "istar.NeededByLink",
+      "source": "el-mwnfbg92-c6zfr",
+      "target": "el-mwnfax5k-4gn8l"
+    }
+  ],
+  "display": {
+    "actor-mwi7mrup-dnims": {
+      "collapsed": false,
+      "width": 514.8507254464286,
+      "height": 441.07886904761915
+    },
+    "actor-mwi7nm2g-wglog": {
+      "collapsed": false,
+      "width": 558.5211286767035,
+      "height": 444.5160140913913
+    },
+    "actor-mwi8e8cq-9obwt": {
+      "collapsed": false,
+      "width": 546.2355957031249,
+      "height": 544
+    },
+    "actor-mwi8fa2e-nhe9s": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi8fjmd-jekgs": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi8fuqd-nie34": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    },
+    "actor-mwi8h0a7-qbopg": {
+      "collapsed": true,
+      "width": 280,
+      "height": 240
+    }
+  },
+  "tool": "pistar.2.1.0",
+  "istar": "2.0",
+  "saveDate": "2026-11-19T10:51:30.139Z",
+  "name": "Untitled i* 2.0 Model"
+}
