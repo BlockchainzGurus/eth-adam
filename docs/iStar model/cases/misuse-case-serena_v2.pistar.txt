@@ -26,7 +26,7 @@
         },
         {
           "id": "el-dev-task-submit",
-          "text": "Submit repository Git URL",
+          "text": "Submit repository URL & commit hash",
           "type": "istar.Task",
           "x": 200,
           "y": 175,
@@ -34,23 +34,23 @@
         },
         {
           "id": "el-dev-task-trace",
-          "text": "Trace of components",
-          "type": "istar.Task",
+          "text": "Review software components",
+          "type": "istar.Goal",
           "x": 370,
           "y": 175,
           "customProperties": {}
         },
         {
           "id": "el-dev-task-found",
-          "text": "Found vulnerability",
-          "type": "istar.Task",
+          "text": "Handle detected vulnerabilities",
+          "type": "istar.Goal",
           "x": 540,
           "y": 175,
           "customProperties": {}
         },
         {
           "id": "el-dev-res-repo",
-          "text": "Source Repository",
+          "text": "Source Repository & commit",
           "type": "istar.Resource",
           "x": 200,
           "y": 280,
@@ -131,42 +131,26 @@
           "customProperties": {}
         },
         {
-          "id": "el-req-task-anavuln",
-          "text": "Analyze vulnerability",
-          "type": "istar.Task",
-          "x": 360,
-          "y": 805,
-          "customProperties": {}
-        },
-        {
-          "id": "el-req-task-anaprog",
-          "text": "Analyze program",
-          "type": "istar.Task",
-          "x": 540,
-          "y": 805,
-          "customProperties": {}
-        },
-        {
           "id": "el-req-task-request",
           "text": "Request security analysis",
           "type": "istar.Task",
-          "x": 200,
-          "y": 910,
+          "x": 340,
+          "y": 805,
           "customProperties": {}
         },
         {
           "id": "el-req-task-verifycert",
-          "text": "Verify certificate & test results",
+          "text": "Inspect report & verify Certificate",
           "type": "istar.Task",
-          "x": 370,
-          "y": 910,
+          "x": 530,
+          "y": 805,
           "customProperties": {}
         },
         {
           "id": "el-req-res-program",
-          "text": "Program",
+          "text": "Target Repository & commit",
           "type": "istar.Resource",
-          "x": 540,
+          "x": 340,
           "y": 910,
           "customProperties": {}
         }
@@ -214,7 +198,7 @@
         },
         {
           "id": "el-sys-goal-trace",
-          "text": "Trace of components",
+          "text": "Generate component traceability (SBOM)",
           "type": "istar.Goal",
           "x": 1525,
           "y": 185,
@@ -238,7 +222,7 @@
         },
         {
           "id": "el-sys-task-fetch",
-          "text": "Fetch Code from Git URL",
+          "text": "Validate target & fetch pinned Code",
           "type": "istar.Task",
           "x": 1175,
           "y": 295,
@@ -246,7 +230,7 @@
         },
         {
           "id": "el-sys-task-dispatch",
-          "text": "Dispatch code to Verifiers",
+          "text": "Dispatch pinned Code to Security Analyzers",
           "type": "istar.Task",
           "x": 1350,
           "y": 295,
@@ -344,7 +328,7 @@
         },
         {
           "id": "el-bc-task-register",
-          "text": "Register Certificate & SBOM hash",
+          "text": "Register Certificate, SBOM & commit hashes",
           "type": "istar.Task",
           "x": 2360,
           "y": 320,
@@ -352,7 +336,7 @@
         },
         {
           "id": "el-bc-task-query",
-          "text": "Query anchored hashes",
+          "text": "Return anchored hash proofs",
           "type": "istar.Task",
           "x": 2560,
           "y": 320,
@@ -362,12 +346,37 @@
     },
     {
       "id": "actor-ver-05",
-      "text": "Verifier",
+      "text": "Security Analyzer",
       "type": "istar.Actor",
-      "x": 1360,
-      "y": 800,
+      "x": 1270,
+      "y": 740,
       "customProperties": {},
-      "nodes": []
+      "nodes": [
+        {
+          "id": "el-ver-qual-acc",
+          "text": "Accurate vulnerability detection",
+          "type": "istar.Quality",
+          "x": 1440,
+          "y": 805,
+          "customProperties": {}
+        },
+        {
+          "id": "el-ver-task-exec",
+          "text": "Execute security analysis on pinned Code",
+          "type": "istar.Task",
+          "x": 1300,
+          "y": 905,
+          "customProperties": {}
+        },
+        {
+          "id": "el-ver-task-report",
+          "text": "Produce vulnerability report",
+          "type": "istar.Task",
+          "x": 1560,
+          "y": 905,
+          "customProperties": {}
+        }
+      ]
     },
     {
       "id": "actor-sast-06",
@@ -570,7 +579,7 @@
     },
     {
       "id": "dep-03-sys-dev-giturl",
-      "text": "Git URL",
+      "text": "Repository URL & commit",
       "type": "istar.Resource",
       "x": 760,
       "y": 100,
@@ -580,32 +589,32 @@
     },
     {
       "id": "dep-04-sys-req-giturl",
-      "text": "Git URL",
+      "text": "Repository URL & commit",
       "type": "istar.Resource",
       "x": 760,
       "y": 575,
       "source": "el-sys-task-fetch",
-      "target": "el-req-res-program",
+      "target": "el-req-task-request",
       "customProperties": {}
     },
     {
       "id": "dep-05-ver-sys-giturl",
-      "text": "Git URL",
+      "text": "Pinned Code snapshot",
       "type": "istar.Resource",
       "x": 1320,
       "y": 685,
-      "source": "actor-ver-05",
+      "source": "el-ver-task-exec",
       "target": "el-sys-task-dispatch",
       "customProperties": {}
     },
     {
       "id": "dep-06-sys-ver-results",
-      "text": "Knowing results",
-      "type": "istar.Quality",
+      "text": "Analysis report",
+      "type": "istar.Resource",
       "x": 1530,
       "y": 685,
       "source": "el-sys-task-aggregate",
-      "target": "actor-ver-05",
+      "target": "el-ver-task-report",
       "customProperties": {}
     },
     {
@@ -675,6 +684,26 @@
       "x": 2115,
       "y": 360,
       "source": "el-sys-task-providever",
+      "target": "el-bc-task-query",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-14-req-sys-analysis",
+      "text": "Security analysis execution",
+      "type": "istar.Goal",
+      "x": 760,
+      "y": 940,
+      "source": "el-req-task-request",
+      "target": "el-sys-goal-coord",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-15-req-bc-proof",
+      "text": "Independent on-chain hash proof",
+      "type": "istar.Resource",
+      "x": 2115,
+      "y": 600,
+      "source": "el-req-task-verifycert",
       "target": "el-bc-task-query",
       "customProperties": {}
     },
@@ -802,32 +831,27 @@
     {
       "id": "link-req-02",
       "type": "istar.AndRefinementLink",
-      "source": "el-req-task-anaprog",
+      "source": "el-req-task-request",
       "target": "el-req-goal-vuln"
     },
     {
       "id": "link-req-03",
       "type": "istar.NeededByLink",
       "source": "el-req-res-program",
-      "target": "el-req-task-anaprog"
+      "target": "el-req-task-request"
     },
     {
       "id": "link-req-04",
       "type": "istar.AndRefinementLink",
-      "source": "el-req-task-anavuln",
+      "source": "el-req-task-verifycert",
       "target": "el-req-goal-vuln"
     },
     {
       "id": "link-req-05",
-      "type": "istar.AndRefinementLink",
-      "source": "el-req-task-request",
-      "target": "el-req-task-anavuln"
-    },
-    {
-      "id": "link-req-06",
-      "type": "istar.AndRefinementLink",
-      "source": "el-req-task-verifycert",
-      "target": "el-req-task-anavuln"
+      "type": "istar.ContributionLink",
+      "source": "el-req-task-auth",
+      "target": "el-req-qual-secure",
+      "label": "help"
     },
     {
       "id": "link-req-07",
@@ -989,6 +1013,20 @@
       "label": "help"
     },
     {
+      "id": "link-ver-01",
+      "type": "istar.ContributionLink",
+      "source": "el-ver-task-exec",
+      "target": "el-ver-qual-acc",
+      "label": "make"
+    },
+    {
+      "id": "link-ver-02",
+      "type": "istar.ContributionLink",
+      "source": "el-ver-task-report",
+      "target": "el-ver-qual-acc",
+      "label": "help"
+    },
+    {
       "id": "link-isa-01",
       "type": "istar.IsALink",
       "source": "actor-sast-06",
@@ -1095,9 +1133,9 @@
       "height": 340
     },
     "actor-ver-05": {
-      "collapsed": true,
-      "width": 280,
-      "height": 240
+      "collapsed": false,
+      "width": 460,
+      "height": 260
     },
     "actor-sast-06": {
       "collapsed": true,
@@ -1132,6 +1170,6 @@
   },
   "tool": "pistar.2.1.0",
   "istar": "2.0",
-  "saveDate": "2026-11-24T11:20:00.580Z",
+  "saveDate": "2026-11-27T11:00:00.000Z",
   "name": "misuse_case_serena"
 }

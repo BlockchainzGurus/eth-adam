@@ -2,28 +2,36 @@
 \label{cap:progettazione}
 
 \section{Architettura generale}
-La Figura~\ref{fig:architettura} mostra uno schema d'esempio dell'architettura; va adattato al progetto.
+La Figura~\ref{fig:architettura} mostra l'architettura logica del sistema e la separazione delle responsabilità tra i cinque attori principali: \emph{Developer}, \emph{Requester}, \emph{System}, \emph{Security Analyzer} (\codice{SAST}/\codice{DAST}/\codice{LLM}) e \emph{Blockchain}.
 
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[
-      node distance=1.4cm and 1.6cm,
-      box/.style={draw=navy, fill=navy!6, rounded corners=3pt, minimum width=2.8cm,
-                  minimum height=1cm, align=center, font=\sffamily\small},
-      chain/.style={draw=teal, fill=teal!10, rounded corners=3pt, minimum width=2.8cm,
-                    minimum height=1cm, align=center, font=\sffamily\small},
+      node distance=2.2cm and 2.3cm,
+      box/.style={draw=navy, fill=navy!6, rounded corners=3pt, minimum width=2.7cm,
+                  minimum height=1.15cm, align=center, font=\sffamily\small},
+      sysbox/.style={draw=navy, fill=navy!8, rounded corners=3pt, minimum width=3.3cm,
+                     minimum height=1.35cm, align=center, font=\sffamily\small},
+      chain/.style={draw=teal, fill=teal!10, rounded corners=3pt, minimum width=3.1cm,
+                    minimum height=1.15cm, align=center, font=\sffamily\small},
       arr/.style={-{Stealth[length=4pt]}, thick, color=navy}]
-    \node[box] (dev) {Sviluppatore};
-    \node[box, right=of dev] (sbom) {Generazione\\\sbom};
-    \node[box, right=of sbom] (cert) {Emissione\\certificato};
-    \node[chain, below=of cert] (bc) {Blockchain\\(smart contract)};
-    \node[box, below=of dev] (ver) {Verificatore};
-    \draw[arr] (dev) -- (sbom);
-    \draw[arr] (sbom) -- (cert);
-    \draw[arr] (cert) -- node[right, font=\scriptsize]{hash} (bc);
-    \draw[arr] (ver) -- node[above, font=\scriptsize]{verifica} (bc);
+    \node[box] (dev) {Developer};
+    \node[sysbox, right=of dev] (sys) {System\\(Auth, Fetch/Pin,\\\sbom, Certificato)};
+    \node[box, right=of sys] (an) {Security Analyzer\\(SAST / DAST / LLM)};
+    \node[box, below=of dev] (req) {Requester};
+    \node[chain, below=of an] (bc) {Blockchain\\(Smart Contract)};
+
+    \draw[arr] ([yshift=4pt]dev.east) -- node[above, font=\scriptsize]{repo + commit} ([yshift=4pt]sys.west);
+    \draw[arr, dashed] ([yshift=-4pt]sys.west) -- node[below, font=\scriptsize]{report, \sbom, cert.} ([yshift=-4pt]dev.east);
+
+    \draw[arr] ([yshift=4pt]sys.east) -- node[above, font=\scriptsize]{codice pinnato} ([yshift=4pt]an.west);
+    \draw[arr, dashed] ([yshift=-4pt]an.west) -- node[below, font=\scriptsize]{report} ([yshift=-4pt]sys.east);
+
+    \draw[arr] (sys.south east) -- node[above right, font=\scriptsize, align=center]{hash (cert.,\\\sbom, commit)} (bc.north west);
+    \draw[arr] (req.north east) -- node[above left, font=\scriptsize, align=center]{richiesta /\\consulta} (sys.south west);
+    \draw[arr] (req.east) -- node[below, font=\scriptsize]{verifica indipendente hash} (bc.west);
   \end{tikzpicture}
-  \caption{Architettura di riferimento (esempio da adattare).}
+  \caption{Architettura generale e separazione dei ruoli tra attori.}
   \label{fig:architettura}
 \end{figure}
 
