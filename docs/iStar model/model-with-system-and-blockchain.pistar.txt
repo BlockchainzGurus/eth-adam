@@ -1,0 +1,885 @@
+{
+  "actors": [
+    {
+      "id": "actor-dev-01",
+      "text": "Developer",
+      "type": "istar.Actor",
+      "x": 0.0,
+      "y": 0.0,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-dev-qual-secure",
+          "text": "Develop a secure code",
+          "type": "istar.Quality",
+          "x": 285.0,
+          "y": 70.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-auth",
+          "text": "Authenticate to System",
+          "type": "istar.Task",
+          "x": 30.0,
+          "y": 175.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-submit",
+          "text": "Submit repository URL & commit hash",
+          "type": "istar.Task",
+          "x": 200.0,
+          "y": 175.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-trace",
+          "text": "Review software components",
+          "type": "istar.Goal",
+          "x": 370.0,
+          "y": 175.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-found",
+          "text": "Handle detected vulnerabilities",
+          "type": "istar.Goal",
+          "x": 540.0,
+          "y": 175.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-res-repo",
+          "text": "Source Repository & commit",
+          "type": "istar.Resource",
+          "x": 200.0,
+          "y": 280.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-sbom",
+          "text": "Inspect SBOM dependencies",
+          "type": "istar.Task",
+          "x": 370.0,
+          "y": 280.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-review",
+          "text": "Review vulnerability report & certificate",
+          "type": "istar.Task",
+          "x": 540.0,
+          "y": 280.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-dev-task-remediate",
+          "text": "Remediate detected vulnerabilities",
+          "type": "istar.Task",
+          "x": 540.0,
+          "y": 375.0,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-req-02",
+      "text": "Requester",
+      "type": "istar.Actor",
+      "x": 0.2794471153845848,
+      "y": 540.1522435897436,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-req-qual-secure",
+          "text": "Knowing that software is secure",
+          "type": "istar.Quality",
+          "x": 282.09134615384613,
+          "y": 607.7213541666667,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-task-auth",
+          "text": "Authenticate to System",
+          "type": "istar.Task",
+          "x": 522.6322115384617,
+          "y": 621.2940705128206,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-goal-trace",
+          "text": "Software traceability",
+          "type": "istar.Goal",
+          "x": 143.10697115384613,
+          "y": 705.1522435897436,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-goal-vuln",
+          "text": "Knowing vulnerability",
+          "type": "istar.Goal",
+          "x": 352.8852163461538,
+          "y": 711.1531021062273,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-task-sbom",
+          "text": "Inspect SBOM & verify dependencies",
+          "type": "istar.Task",
+          "x": 101.50540865384612,
+          "y": 824.2297676282052,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-task-request",
+          "text": "Request security analysis",
+          "type": "istar.Task",
+          "x": 336.1478365384615,
+          "y": 840.2574118589744,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-task-verifycert",
+          "text": "Inspect report & verify Certificate",
+          "type": "istar.Task",
+          "x": 524.6183894230768,
+          "y": 828.202123397436,
+          "customProperties": {}
+        },
+        {
+          "id": "el-req-res-program",
+          "text": "Target Repository & commit",
+          "type": "istar.Resource",
+          "x": 259.9008413461538,
+          "y": 937.7393830128206,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-sys-03",
+      "text": "System",
+      "type": "istar.Actor",
+      "x": 957.8924418604652,
+      "y": 1.3898982558139323,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-sys-qual-quality",
+          "text": "Analyze quality of software",
+          "type": "istar.Quality",
+          "x": 1198.0359738372094,
+          "y": 32.23110465116276,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-qual-integrity",
+          "text": "Integrity and traceability of results",
+          "type": "istar.Quality",
+          "x": 1659.5893895348838,
+          "y": 25.381540697674396,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-goal-auth",
+          "text": "Manage user authentication",
+          "type": "istar.Goal",
+          "x": 997.8924418604652,
+          "y": 186.38989825581393,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-goal-coord",
+          "text": "Coordinate analysis systems",
+          "type": "istar.Goal",
+          "x": 1217.8125,
+          "y": 132.92877906976742,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-goal-trace",
+          "text": "Generate component traceability (SBOM)",
+          "type": "istar.Goal",
+          "x": 1437.1911337209306,
+          "y": 182.7834302325581,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-goal-save",
+          "text": "Save results",
+          "type": "istar.Goal",
+          "x": 1806.269985465116,
+          "y": 125.84302325581392,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-auth",
+          "text": "Authenticate Developer and Requester",
+          "type": "istar.Task",
+          "x": 992.3419331395348,
+          "y": 328.31213662790697,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-fetch",
+          "text": "Validate target & fetch pinned Code",
+          "type": "istar.Task",
+          "x": 1155.8230377906978,
+          "y": 347.3982558139534,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-dispatch",
+          "text": "Dispatch pinned Code to Security Analyzers",
+          "type": "istar.Task",
+          "x": 1322.9106104651162,
+          "y": 322.15297965116287,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-aggregate",
+          "text": "Aggregate analysis reports",
+          "type": "istar.Task",
+          "x": 1112.9269622093022,
+          "y": 523.2703488372093,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-sbom",
+          "text": "Generate SBOM",
+          "type": "istar.Task",
+          "x": 1503.8154069767445,
+          "y": 303.75726744186045,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-issue",
+          "text": "Issue security Certificate",
+          "type": "istar.Task",
+          "x": 1758.5119912790697,
+          "y": 309.734738372093,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-res-code",
+          "text": "Code",
+          "type": "istar.Resource",
+          "x": 1308.6028343023256,
+          "y": 519.3804505813953,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-store",
+          "text": "Store full Certificate off-chain",
+          "type": "istar.Task",
+          "x": 1651.190043604651,
+          "y": 241.4734738372093,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-anchor",
+          "text": "Anchor Certificate, SBOM & commit hashes on-chain",
+          "type": "istar.Task",
+          "x": 1900.090843023256,
+          "y": 335.9138808139535,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-task-providever",
+          "text": "Provide verification of saved results",
+          "type": "istar.Task",
+          "x": 1852.1620639534883,
+          "y": 541.7914244186046,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-res-sbom",
+          "text": "SBOM",
+          "type": "istar.Resource",
+          "x": 1662.6726017441858,
+          "y": 520.7867005813953,
+          "customProperties": {}
+        },
+        {
+          "id": "el-sys-res-cert",
+          "text": "Certificate",
+          "type": "istar.Resource",
+          "x": 1487.3728197674418,
+          "y": 522.1493459302325,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-bc-04",
+      "text": "Blockchain",
+      "type": "istar.Actor",
+      "x": 2320.0,
+      "y": 120.0,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-bc-qual-immut",
+          "text": "Immutability and non-repudiation",
+          "type": "istar.Quality",
+          "x": 2460.0,
+          "y": 195.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-bc-task-register",
+          "text": "Register Certificate, SBOM & commit hashes",
+          "type": "istar.Task",
+          "x": 2360.0,
+          "y": 320.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-bc-task-query",
+          "text": "Return anchored hash proofs",
+          "type": "istar.Task",
+          "x": 2560.0,
+          "y": 320.0,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-ver-05",
+      "text": "Security Analyzer",
+      "type": "istar.Actor",
+      "x": 1270.0,
+      "y": 740.0,
+      "customProperties": {},
+      "nodes": [
+        {
+          "id": "el-ver-qual-acc",
+          "text": "Accurate vulnerability detection",
+          "type": "istar.Quality",
+          "x": 1440.0,
+          "y": 805.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-ver-task-exec",
+          "text": "Execute security analysis on pinned Code",
+          "type": "istar.Task",
+          "x": 1300.0,
+          "y": 905.0,
+          "customProperties": {}
+        },
+        {
+          "id": "el-ver-task-report",
+          "text": "Produce vulnerability report",
+          "type": "istar.Task",
+          "x": 1560.0,
+          "y": 905.0,
+          "customProperties": {}
+        }
+      ]
+    },
+    {
+      "id": "actor-sast-06",
+      "text": "SAST",
+      "type": "istar.Actor",
+      "x": 1020.0,
+      "y": 1090.0,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-dast-07",
+      "text": "DAST",
+      "type": "istar.Actor",
+      "x": 1360.0,
+      "y": 1090.0,
+      "customProperties": {},
+      "nodes": []
+    },
+    {
+      "id": "actor-llm-08",
+      "text": "LLM",
+      "type": "istar.Actor",
+      "x": 1700.0,
+      "y": 1090.0,
+      "customProperties": {},
+      "nodes": []
+    }
+  ],
+  "orphans": [],
+  "dependencies": [
+    {
+      "id": "dep-01-dev-login",
+      "text": "Log in",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 195.0,
+      "source": "el-dev-task-auth",
+      "target": "el-sys-task-auth",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-02-req-login",
+      "text": "Log in",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 480.0,
+      "source": "el-req-task-auth",
+      "target": "el-sys-task-auth",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-03-sys-dev-giturl",
+      "text": "Repository URL & commit",
+      "type": "istar.Resource",
+      "x": 760.0,
+      "y": 100.0,
+      "source": "el-sys-task-fetch",
+      "target": "el-dev-task-submit",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-04-sys-req-giturl",
+      "text": "Repository URL & commit",
+      "type": "istar.Resource",
+      "x": 760.0,
+      "y": 575.0,
+      "source": "el-sys-task-fetch",
+      "target": "el-req-task-request",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-05-ver-sys-giturl",
+      "text": "Pinned Code snapshot",
+      "type": "istar.Resource",
+      "x": 1291.248183139535,
+      "y": 652.2783430232557,
+      "source": "el-ver-task-exec",
+      "target": "el-sys-task-dispatch",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-06-sys-ver-results",
+      "text": "Analysis report",
+      "type": "istar.Resource",
+      "x": 1530.0,
+      "y": 685.0,
+      "source": "el-sys-task-aggregate",
+      "target": "el-ver-task-report",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-07-dev-cert-passed",
+      "text": "Knowing that program passed tests",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 385.0,
+      "source": "el-dev-task-review",
+      "target": "el-sys-res-cert",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-08-req-cert-passed",
+      "text": "Knowing that program passed tests",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 765.0,
+      "source": "el-req-task-verifycert",
+      "target": "el-sys-res-cert",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-09-req-verifying-res",
+      "text": "Verifying results",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 860.0,
+      "source": "el-req-task-verifycert",
+      "target": "el-sys-task-providever",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-10-dev-detect-deps",
+      "text": "Detect other dependencies",
+      "type": "istar.Quality",
+      "x": 760.0,
+      "y": 290.0,
+      "source": "el-dev-task-sbom",
+      "target": "el-sys-goal-trace",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-11-req-verifying-deps",
+      "text": "Verifying dependencies",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 670.0,
+      "source": "el-req-task-sbom",
+      "target": "el-sys-task-providever",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-12-sys-bc-anchor",
+      "text": "Hash anchoring",
+      "type": "istar.Task",
+      "x": 2115.999273255814,
+      "y": 327.09120639534876,
+      "source": "el-sys-task-anchor",
+      "target": "el-bc-task-register",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-13-sys-bc-proof",
+      "text": "On-chain hash proof",
+      "type": "istar.Resource",
+      "x": 2121.2318313953488,
+      "y": 512.2801598837209,
+      "source": "el-sys-task-providever",
+      "target": "el-bc-task-query",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-14-req-sys-analysis",
+      "text": "Security analysis execution",
+      "type": "istar.Goal",
+      "x": 760.0,
+      "y": 940.0,
+      "source": "el-req-task-request",
+      "target": "el-sys-goal-coord",
+      "customProperties": {}
+    },
+    {
+      "id": "dep-15-req-bc-proof",
+      "text": "Independent on-chain hash proof",
+      "type": "istar.Resource",
+      "x": 2115.0,
+      "y": 600.0,
+      "source": "el-req-task-verifycert",
+      "target": "el-bc-task-query",
+      "customProperties": {}
+    }
+  ],
+  "links": [
+    {
+      "id": "link-dev-01",
+      "type": "istar.ContributionLink",
+      "source": "el-dev-task-auth",
+      "target": "el-dev-qual-secure",
+      "label": "help"
+    },
+    {
+      "id": "link-dev-02",
+      "type": "istar.NeededByLink",
+      "source": "el-dev-res-repo",
+      "target": "el-dev-task-submit"
+    },
+    {
+      "id": "link-dev-03",
+      "type": "istar.ContributionLink",
+      "source": "el-dev-task-submit",
+      "target": "el-dev-qual-secure",
+      "label": "help"
+    },
+    {
+      "id": "link-dev-04",
+      "type": "istar.ContributionLink",
+      "source": "el-dev-task-trace",
+      "target": "el-dev-qual-secure",
+      "label": "make"
+    },
+    {
+      "id": "link-dev-05",
+      "type": "istar.OrRefinementLink",
+      "source": "el-dev-task-sbom",
+      "target": "el-dev-task-trace"
+    },
+    {
+      "id": "link-dev-06",
+      "type": "istar.ContributionLink",
+      "source": "el-dev-task-found",
+      "target": "el-dev-qual-secure",
+      "label": "make"
+    },
+    {
+      "id": "link-dev-07",
+      "type": "istar.AndRefinementLink",
+      "source": "el-dev-task-review",
+      "target": "el-dev-task-found"
+    },
+    {
+      "id": "link-dev-08",
+      "type": "istar.AndRefinementLink",
+      "source": "el-dev-task-remediate",
+      "target": "el-dev-task-found"
+    },
+    {
+      "id": "link-req-01",
+      "type": "istar.ContributionLink",
+      "source": "el-req-goal-vuln",
+      "target": "el-req-qual-secure",
+      "label": "make"
+    },
+    {
+      "id": "link-req-02",
+      "type": "istar.AndRefinementLink",
+      "source": "el-req-task-request",
+      "target": "el-req-goal-vuln"
+    },
+    {
+      "id": "link-req-03",
+      "type": "istar.NeededByLink",
+      "source": "el-req-res-program",
+      "target": "el-req-task-request"
+    },
+    {
+      "id": "link-req-04",
+      "type": "istar.AndRefinementLink",
+      "source": "el-req-task-verifycert",
+      "target": "el-req-goal-vuln"
+    },
+    {
+      "id": "link-req-05",
+      "type": "istar.ContributionLink",
+      "source": "el-req-task-auth",
+      "target": "el-req-qual-secure",
+      "label": "help"
+    },
+    {
+      "id": "link-req-07",
+      "type": "istar.ContributionLink",
+      "source": "el-req-goal-trace",
+      "target": "el-req-qual-secure",
+      "label": "make"
+    },
+    {
+      "id": "link-req-08",
+      "type": "istar.OrRefinementLink",
+      "source": "el-req-task-sbom",
+      "target": "el-req-goal-trace"
+    },
+    {
+      "id": "link-sys-01",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-auth",
+      "target": "el-sys-qual-quality",
+      "label": "help"
+    },
+    {
+      "id": "link-sys-02",
+      "type": "istar.OrRefinementLink",
+      "source": "el-sys-task-auth",
+      "target": "el-sys-goal-auth"
+    },
+    {
+      "id": "link-sys-03",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-coord",
+      "target": "el-sys-qual-quality",
+      "label": "make"
+    },
+    {
+      "id": "link-sys-04",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-fetch",
+      "target": "el-sys-goal-coord"
+    },
+    {
+      "id": "link-sys-05",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-dispatch",
+      "target": "el-sys-goal-coord"
+    },
+    {
+      "id": "link-sys-06",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-aggregate",
+      "target": "el-sys-goal-coord"
+    },
+    {
+      "id": "link-sys-07",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-code",
+      "target": "el-sys-task-dispatch"
+    },
+    {
+      "id": "link-sys-08",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-trace",
+      "target": "el-sys-qual-quality",
+      "label": "help"
+    },
+    {
+      "id": "link-sys-09",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-trace",
+      "target": "el-sys-qual-integrity",
+      "label": "help"
+    },
+    {
+      "id": "link-sys-10",
+      "type": "istar.OrRefinementLink",
+      "source": "el-sys-task-sbom",
+      "target": "el-sys-goal-trace"
+    },
+    {
+      "id": "link-sys-11",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-code",
+      "target": "el-sys-task-sbom"
+    },
+    {
+      "id": "link-sys-12",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-save",
+      "target": "el-sys-qual-quality",
+      "label": "help"
+    },
+    {
+      "id": "link-sys-13",
+      "type": "istar.ContributionLink",
+      "source": "el-sys-goal-save",
+      "target": "el-sys-qual-integrity",
+      "label": "make"
+    },
+    {
+      "id": "link-sys-14",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-issue",
+      "target": "el-sys-goal-save"
+    },
+    {
+      "id": "link-sys-15",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-store",
+      "target": "el-sys-goal-save"
+    },
+    {
+      "id": "link-sys-16",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-anchor",
+      "target": "el-sys-goal-save"
+    },
+    {
+      "id": "link-sys-17",
+      "type": "istar.AndRefinementLink",
+      "source": "el-sys-task-providever",
+      "target": "el-sys-goal-save"
+    },
+    {
+      "id": "link-sys-18",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-cert",
+      "target": "el-sys-task-issue"
+    },
+    {
+      "id": "link-sys-19",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-cert",
+      "target": "el-sys-task-store"
+    },
+    {
+      "id": "link-sys-20",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-sbom",
+      "target": "el-sys-task-anchor"
+    },
+    {
+      "id": "link-sys-21",
+      "type": "istar.NeededByLink",
+      "source": "el-sys-res-cert",
+      "target": "el-sys-task-anchor"
+    },
+    {
+      "id": "link-bc-01",
+      "type": "istar.ContributionLink",
+      "source": "el-bc-task-register",
+      "target": "el-bc-qual-immut",
+      "label": "make"
+    },
+    {
+      "id": "link-bc-02",
+      "type": "istar.ContributionLink",
+      "source": "el-bc-task-query",
+      "target": "el-bc-qual-immut",
+      "label": "help"
+    },
+    {
+      "id": "link-ver-01",
+      "type": "istar.ContributionLink",
+      "source": "el-ver-task-exec",
+      "target": "el-ver-qual-acc",
+      "label": "make"
+    },
+    {
+      "id": "link-ver-02",
+      "type": "istar.ContributionLink",
+      "source": "el-ver-task-report",
+      "target": "el-ver-qual-acc",
+      "label": "help"
+    },
+    {
+      "id": "link-isa-01",
+      "type": "istar.IsALink",
+      "source": "actor-sast-06",
+      "target": "actor-ver-05"
+    },
+    {
+      "id": "link-isa-02",
+      "type": "istar.IsALink",
+      "source": "actor-dast-07",
+      "target": "actor-ver-05"
+    },
+    {
+      "id": "link-isa-03",
+      "type": "istar.IsALink",
+      "source": "actor-llm-08",
+      "target": "actor-ver-05"
+    }
+  ],
+  "display": {
+    "actor-llm-08": {
+      "collapsed": true,
+      "width": 280.0,
+      "height": 240.0
+    },
+    "actor-sast-06": {
+      "collapsed": true,
+      "width": 280.0,
+      "height": 240.0
+    },
+    "actor-dev-01": {
+      "collapsed": false,
+      "width": 690.0,
+      "height": 450.0
+    },
+    "actor-req-02": {
+      "collapsed": false,
+      "width": 690.0,
+      "height": 480.0
+    },
+    "actor-sys-03": {
+      "collapsed": false,
+      "width": 1080.0,
+      "height": 620.0
+    },
+    "actor-bc-04": {
+      "collapsed": false,
+      "width": 420.0,
+      "height": 340.0
+    },
+    "actor-dast-07": {
+      "collapsed": true,
+      "width": 280.0,
+      "height": 240.0
+    },
+    "actor-ver-05": {
+      "collapsed": false,
+      "width": 460.0,
+      "height": 260.0
+    }
+  },
+  "tool": "pistar.2.1.0",
+  "istar": "2.0",
+  "saveDate": "2026-11-27T11:00:00.000Z",
+  "name": "model_with_system_and_blockchain"
+}

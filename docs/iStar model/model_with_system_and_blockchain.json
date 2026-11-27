@@ -1,0 +1,1013 @@
+{
+  "id": "imported-model",
+  "name": "model_with_system_and_blockchain",
+  "version": "2.0",
+  "actors": [
+    {
+      "id": "actor-dev-01",
+      "name": "Developer",
+      "kind": "actor",
+      "x": 0,
+      "y": 0,
+      "width": 690,
+      "height": 450,
+      "collapsed": false,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-req-02",
+      "name": "Requester",
+      "kind": "actor",
+      "x": 0.2794471153845848,
+      "y": 540.1522435897436,
+      "width": 690,
+      "height": 480,
+      "collapsed": false,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-sys-03",
+      "name": "System",
+      "kind": "actor",
+      "x": 957.8924418604652,
+      "y": 1.3898982558139323,
+      "width": 1080,
+      "height": 620,
+      "collapsed": false,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-bc-04",
+      "name": "Blockchain",
+      "kind": "actor",
+      "x": 2320,
+      "y": 120,
+      "width": 420,
+      "height": 340,
+      "collapsed": false,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-ver-05",
+      "name": "Security Analyzer",
+      "kind": "actor",
+      "x": 1270,
+      "y": 740,
+      "width": 460,
+      "height": 260,
+      "collapsed": false,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-sast-06",
+      "name": "SAST",
+      "kind": "actor",
+      "x": 1020,
+      "y": 1090,
+      "width": 280,
+      "height": 240,
+      "collapsed": true,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-dast-07",
+      "name": "DAST",
+      "kind": "actor",
+      "x": 1360,
+      "y": 1090,
+      "width": 280,
+      "height": 240,
+      "collapsed": true,
+      "customProperties": {}
+    },
+    {
+      "id": "actor-llm-08",
+      "name": "LLM",
+      "kind": "actor",
+      "x": 1700,
+      "y": 1090,
+      "width": 280,
+      "height": 240,
+      "collapsed": true,
+      "customProperties": {}
+    }
+  ],
+  "elements": [
+    {
+      "id": "el-dev-qual-secure",
+      "name": "Develop a secure code",
+      "kind": "quality",
+      "actorId": "actor-dev-01",
+      "x": 285,
+      "y": 70,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-auth",
+      "name": "Authenticate to System",
+      "kind": "task",
+      "actorId": "actor-dev-01",
+      "x": 30,
+      "y": 175,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-submit",
+      "name": "Submit repository URL & commit hash",
+      "kind": "task",
+      "actorId": "actor-dev-01",
+      "x": 200,
+      "y": 175,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-trace",
+      "name": "Review software components",
+      "kind": "goal",
+      "actorId": "actor-dev-01",
+      "x": 370,
+      "y": 175,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-found",
+      "name": "Handle detected vulnerabilities",
+      "kind": "goal",
+      "actorId": "actor-dev-01",
+      "x": 540,
+      "y": 175,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-res-repo",
+      "name": "Source Repository & commit",
+      "kind": "resource",
+      "actorId": "actor-dev-01",
+      "x": 200,
+      "y": 280,
+      "width": 122,
+      "height": 48,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-sbom",
+      "name": "Inspect SBOM dependencies",
+      "kind": "task",
+      "actorId": "actor-dev-01",
+      "x": 370,
+      "y": 280,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-review",
+      "name": "Review vulnerability report & certificate",
+      "kind": "task",
+      "actorId": "actor-dev-01",
+      "x": 540,
+      "y": 280,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-dev-task-remediate",
+      "name": "Remediate detected vulnerabilities",
+      "kind": "task",
+      "actorId": "actor-dev-01",
+      "x": 540,
+      "y": 375,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-qual-secure",
+      "name": "Knowing that software is secure",
+      "kind": "quality",
+      "actorId": "actor-req-02",
+      "x": 282.09134615384613,
+      "y": 607.7213541666667,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-task-auth",
+      "name": "Authenticate to System",
+      "kind": "task",
+      "actorId": "actor-req-02",
+      "x": 522.6322115384617,
+      "y": 621.2940705128206,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-goal-trace",
+      "name": "Software traceability",
+      "kind": "goal",
+      "actorId": "actor-req-02",
+      "x": 143.10697115384613,
+      "y": 705.1522435897436,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-goal-vuln",
+      "name": "Knowing vulnerability",
+      "kind": "goal",
+      "actorId": "actor-req-02",
+      "x": 352.8852163461538,
+      "y": 711.1531021062273,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-task-sbom",
+      "name": "Inspect SBOM & verify dependencies",
+      "kind": "task",
+      "actorId": "actor-req-02",
+      "x": 101.50540865384613,
+      "y": 824.2297676282052,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-task-request",
+      "name": "Request security analysis",
+      "kind": "task",
+      "actorId": "actor-req-02",
+      "x": 336.1478365384615,
+      "y": 840.2574118589744,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-task-verifycert",
+      "name": "Inspect report & verify Certificate",
+      "kind": "task",
+      "actorId": "actor-req-02",
+      "x": 524.6183894230768,
+      "y": 828.202123397436,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-req-res-program",
+      "name": "Target Repository & commit",
+      "kind": "resource",
+      "actorId": "actor-req-02",
+      "x": 259.9008413461538,
+      "y": 937.7393830128206,
+      "width": 122,
+      "height": 48,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-qual-quality",
+      "name": "Analyze quality of software",
+      "kind": "quality",
+      "actorId": "actor-sys-03",
+      "x": 1198.0359738372094,
+      "y": 32.23110465116276,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-qual-integrity",
+      "name": "Integrity and traceability of results",
+      "kind": "quality",
+      "actorId": "actor-sys-03",
+      "x": 1659.5893895348838,
+      "y": 25.381540697674396,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-goal-auth",
+      "name": "Manage user authentication",
+      "kind": "goal",
+      "actorId": "actor-sys-03",
+      "x": 997.8924418604652,
+      "y": 186.38989825581393,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-goal-coord",
+      "name": "Coordinate analysis systems",
+      "kind": "goal",
+      "actorId": "actor-sys-03",
+      "x": 1217.8125,
+      "y": 132.92877906976742,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-goal-trace",
+      "name": "Generate component traceability (SBOM)",
+      "kind": "goal",
+      "actorId": "actor-sys-03",
+      "x": 1437.1911337209306,
+      "y": 182.7834302325581,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-goal-save",
+      "name": "Save results",
+      "kind": "goal",
+      "actorId": "actor-sys-03",
+      "x": 1806.2699854651162,
+      "y": 125.84302325581393,
+      "width": 124,
+      "height": 50,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-auth",
+      "name": "Authenticate Developer and Requester",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 992.3419331395348,
+      "y": 328.31213662790697,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-fetch",
+      "name": "Validate target & fetch pinned Code",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1155.8230377906978,
+      "y": 347.3982558139534,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-dispatch",
+      "name": "Dispatch pinned Code to Security Analyzers",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1322.9106104651162,
+      "y": 322.15297965116287,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-aggregate",
+      "name": "Aggregate analysis reports",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1112.9269622093022,
+      "y": 523.2703488372093,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-sbom",
+      "name": "Generate SBOM",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1503.8154069767443,
+      "y": 303.75726744186045,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-issue",
+      "name": "Issue security Certificate",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1758.5119912790697,
+      "y": 309.734738372093,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-res-code",
+      "name": "Code",
+      "kind": "resource",
+      "actorId": "actor-sys-03",
+      "x": 1308.6028343023256,
+      "y": 519.3804505813953,
+      "width": 122,
+      "height": 48,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-store",
+      "name": "Store full Certificate off-chain",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1651.190043604651,
+      "y": 241.4734738372093,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-anchor",
+      "name": "Anchor Certificate, SBOM & commit hashes on-chain",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1900.0908430232562,
+      "y": 335.9138808139535,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-task-providever",
+      "name": "Provide verification of saved results",
+      "kind": "task",
+      "actorId": "actor-sys-03",
+      "x": 1852.1620639534883,
+      "y": 541.7914244186046,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-res-sbom",
+      "name": "SBOM",
+      "kind": "resource",
+      "actorId": "actor-sys-03",
+      "x": 1662.6726017441858,
+      "y": 520.7867005813953,
+      "width": 122,
+      "height": 48,
+      "customProperties": {}
+    },
+    {
+      "id": "el-sys-res-cert",
+      "name": "Certificate",
+      "kind": "resource",
+      "actorId": "actor-sys-03",
+      "x": 1487.3728197674418,
+      "y": 522.1493459302325,
+      "width": 122,
+      "height": 48,
+      "customProperties": {}
+    },
+    {
+      "id": "el-bc-qual-immut",
+      "name": "Immutability and non-repudiation",
+      "kind": "quality",
+      "actorId": "actor-bc-04",
+      "x": 2460,
+      "y": 195,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-bc-task-register",
+      "name": "Register Certificate, SBOM & commit hashes",
+      "kind": "task",
+      "actorId": "actor-bc-04",
+      "x": 2360,
+      "y": 320,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-bc-task-query",
+      "name": "Return anchored hash proofs",
+      "kind": "task",
+      "actorId": "actor-bc-04",
+      "x": 2560,
+      "y": 320,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-ver-qual-acc",
+      "name": "Accurate vulnerability detection",
+      "kind": "quality",
+      "actorId": "actor-ver-05",
+      "x": 1440,
+      "y": 805,
+      "width": 128,
+      "height": 56,
+      "customProperties": {}
+    },
+    {
+      "id": "el-ver-task-exec",
+      "name": "Execute security analysis on pinned Code",
+      "kind": "task",
+      "actorId": "actor-ver-05",
+      "x": 1300,
+      "y": 905,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    },
+    {
+      "id": "el-ver-task-report",
+      "name": "Produce vulnerability report",
+      "kind": "task",
+      "actorId": "actor-ver-05",
+      "x": 1560,
+      "y": 905,
+      "width": 130,
+      "height": 52,
+      "customProperties": {}
+    }
+  ],
+  "links": [
+    {
+      "id": "link-dev-01",
+      "sourceId": "el-dev-task-auth",
+      "targetId": "el-dev-qual-secure",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-dev-02",
+      "sourceId": "el-dev-res-repo",
+      "targetId": "el-dev-task-submit",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-dev-03",
+      "sourceId": "el-dev-task-submit",
+      "targetId": "el-dev-qual-secure",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-dev-04",
+      "sourceId": "el-dev-task-trace",
+      "targetId": "el-dev-qual-secure",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-dev-05",
+      "sourceId": "el-dev-task-sbom",
+      "targetId": "el-dev-task-trace",
+      "kind": "orRefinement"
+    },
+    {
+      "id": "link-dev-06",
+      "sourceId": "el-dev-task-found",
+      "targetId": "el-dev-qual-secure",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-dev-07",
+      "sourceId": "el-dev-task-review",
+      "targetId": "el-dev-task-found",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-dev-08",
+      "sourceId": "el-dev-task-remediate",
+      "targetId": "el-dev-task-found",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-req-01",
+      "sourceId": "el-req-goal-vuln",
+      "targetId": "el-req-qual-secure",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-req-02",
+      "sourceId": "el-req-task-request",
+      "targetId": "el-req-goal-vuln",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-req-03",
+      "sourceId": "el-req-res-program",
+      "targetId": "el-req-task-request",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-req-04",
+      "sourceId": "el-req-task-verifycert",
+      "targetId": "el-req-goal-vuln",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-req-05",
+      "sourceId": "el-req-task-auth",
+      "targetId": "el-req-qual-secure",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-req-07",
+      "sourceId": "el-req-goal-trace",
+      "targetId": "el-req-qual-secure",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-req-08",
+      "sourceId": "el-req-task-sbom",
+      "targetId": "el-req-goal-trace",
+      "kind": "orRefinement"
+    },
+    {
+      "id": "link-sys-01",
+      "sourceId": "el-sys-goal-auth",
+      "targetId": "el-sys-qual-quality",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-sys-02",
+      "sourceId": "el-sys-task-auth",
+      "targetId": "el-sys-goal-auth",
+      "kind": "orRefinement"
+    },
+    {
+      "id": "link-sys-03",
+      "sourceId": "el-sys-goal-coord",
+      "targetId": "el-sys-qual-quality",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-sys-04",
+      "sourceId": "el-sys-task-fetch",
+      "targetId": "el-sys-goal-coord",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-05",
+      "sourceId": "el-sys-task-dispatch",
+      "targetId": "el-sys-goal-coord",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-06",
+      "sourceId": "el-sys-task-aggregate",
+      "targetId": "el-sys-goal-coord",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-07",
+      "sourceId": "el-sys-res-code",
+      "targetId": "el-sys-task-dispatch",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-sys-08",
+      "sourceId": "el-sys-goal-trace",
+      "targetId": "el-sys-qual-quality",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-sys-09",
+      "sourceId": "el-sys-goal-trace",
+      "targetId": "el-sys-qual-integrity",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-sys-10",
+      "sourceId": "el-sys-task-sbom",
+      "targetId": "el-sys-goal-trace",
+      "kind": "orRefinement"
+    },
+    {
+      "id": "link-sys-11",
+      "sourceId": "el-sys-res-code",
+      "targetId": "el-sys-task-sbom",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-sys-12",
+      "sourceId": "el-sys-goal-save",
+      "targetId": "el-sys-qual-quality",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-sys-13",
+      "sourceId": "el-sys-goal-save",
+      "targetId": "el-sys-qual-integrity",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-sys-14",
+      "sourceId": "el-sys-task-issue",
+      "targetId": "el-sys-goal-save",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-15",
+      "sourceId": "el-sys-task-store",
+      "targetId": "el-sys-goal-save",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-16",
+      "sourceId": "el-sys-task-anchor",
+      "targetId": "el-sys-goal-save",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-17",
+      "sourceId": "el-sys-task-providever",
+      "targetId": "el-sys-goal-save",
+      "kind": "andRefinement"
+    },
+    {
+      "id": "link-sys-18",
+      "sourceId": "el-sys-res-cert",
+      "targetId": "el-sys-task-issue",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-sys-19",
+      "sourceId": "el-sys-res-cert",
+      "targetId": "el-sys-task-store",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-sys-20",
+      "sourceId": "el-sys-res-sbom",
+      "targetId": "el-sys-task-anchor",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-sys-21",
+      "sourceId": "el-sys-res-cert",
+      "targetId": "el-sys-task-anchor",
+      "kind": "neededBy"
+    },
+    {
+      "id": "link-bc-01",
+      "sourceId": "el-bc-task-register",
+      "targetId": "el-bc-qual-immut",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-bc-02",
+      "sourceId": "el-bc-task-query",
+      "targetId": "el-bc-qual-immut",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-ver-01",
+      "sourceId": "el-ver-task-exec",
+      "targetId": "el-ver-qual-acc",
+      "kind": "contribution",
+      "value": "make"
+    },
+    {
+      "id": "link-ver-02",
+      "sourceId": "el-ver-task-report",
+      "targetId": "el-ver-qual-acc",
+      "kind": "contribution",
+      "value": "help"
+    },
+    {
+      "id": "link-isa-01",
+      "sourceId": "actor-sast-06",
+      "targetId": "actor-ver-05",
+      "kind": "isA"
+    },
+    {
+      "id": "link-isa-02",
+      "sourceId": "actor-dast-07",
+      "targetId": "actor-ver-05",
+      "kind": "isA"
+    },
+    {
+      "id": "link-isa-03",
+      "sourceId": "actor-llm-08",
+      "targetId": "actor-ver-05",
+      "kind": "isA"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "dep-01-dev-login",
+      "dependerActorId": "actor-dev-01",
+      "dependerElementId": "el-dev-task-auth",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-task-auth",
+      "dependumName": "Log in",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 195,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-02-req-login",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-auth",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-task-auth",
+      "dependumName": "Log in",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 480,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-03-sys-dev-giturl",
+      "dependerActorId": "actor-sys-03",
+      "dependerElementId": "el-sys-task-fetch",
+      "dependeeActorId": "actor-dev-01",
+      "dependeeElementId": "el-dev-task-submit",
+      "dependumName": "Repository URL & commit",
+      "dependumKind": "resource",
+      "x": 760,
+      "y": 100,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-04-sys-req-giturl",
+      "dependerActorId": "actor-sys-03",
+      "dependerElementId": "el-sys-task-fetch",
+      "dependeeActorId": "actor-req-02",
+      "dependeeElementId": "el-req-task-request",
+      "dependumName": "Repository URL & commit",
+      "dependumKind": "resource",
+      "x": 760,
+      "y": 575,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-05-ver-sys-giturl",
+      "dependerActorId": "actor-ver-05",
+      "dependerElementId": "el-ver-task-exec",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-task-dispatch",
+      "dependumName": "Pinned Code snapshot",
+      "dependumKind": "resource",
+      "x": 1291.248183139535,
+      "y": 652.2783430232557,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-06-sys-ver-results",
+      "dependerActorId": "actor-sys-03",
+      "dependerElementId": "el-sys-task-aggregate",
+      "dependeeActorId": "actor-ver-05",
+      "dependeeElementId": "el-ver-task-report",
+      "dependumName": "Analysis report",
+      "dependumKind": "resource",
+      "x": 1530,
+      "y": 685,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-07-dev-cert-passed",
+      "dependerActorId": "actor-dev-01",
+      "dependerElementId": "el-dev-task-review",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-res-cert",
+      "dependumName": "Knowing that program passed tests",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 385,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-08-req-cert-passed",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-verifycert",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-res-cert",
+      "dependumName": "Knowing that program passed tests",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 765,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-09-req-verifying-res",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-verifycert",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-task-providever",
+      "dependumName": "Verifying results",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 860,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-10-dev-detect-deps",
+      "dependerActorId": "actor-dev-01",
+      "dependerElementId": "el-dev-task-sbom",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-goal-trace",
+      "dependumName": "Detect other dependencies",
+      "dependumKind": "quality",
+      "x": 760,
+      "y": 290,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-11-req-verifying-deps",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-sbom",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-task-providever",
+      "dependumName": "Verifying dependencies",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 670,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-12-sys-bc-anchor",
+      "dependerActorId": "actor-sys-03",
+      "dependerElementId": "el-sys-task-anchor",
+      "dependeeActorId": "actor-bc-04",
+      "dependeeElementId": "el-bc-task-register",
+      "dependumName": "Hash anchoring",
+      "dependumKind": "task",
+      "x": 2115.999273255814,
+      "y": 327.09120639534876,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-13-sys-bc-proof",
+      "dependerActorId": "actor-sys-03",
+      "dependerElementId": "el-sys-task-providever",
+      "dependeeActorId": "actor-bc-04",
+      "dependeeElementId": "el-bc-task-query",
+      "dependumName": "On-chain hash proof",
+      "dependumKind": "resource",
+      "x": 2121.2318313953488,
+      "y": 512.2801598837209,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-14-req-sys-analysis",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-request",
+      "dependeeActorId": "actor-sys-03",
+      "dependeeElementId": "el-sys-goal-coord",
+      "dependumName": "Security analysis execution",
+      "dependumKind": "goal",
+      "x": 760,
+      "y": 940,
+      "customProperties": {}
+    },
+    {
+      "id": "dep-15-req-bc-proof",
+      "dependerActorId": "actor-req-02",
+      "dependerElementId": "el-req-task-verifycert",
+      "dependeeActorId": "actor-bc-04",
+      "dependeeElementId": "el-bc-task-query",
+      "dependumName": "Independent on-chain hash proof",
+      "dependumKind": "resource",
+      "x": 2115,
+      "y": 600,
+      "customProperties": {}
+    }
+  ],
+  "metadata": {
+    "author": "",
+    "description": "",
+    "createdAt": "",
+    "updatedAt": "2026-11-27T11:00:00.000Z"
+  }
+}
